@@ -1,0 +1,59 @@
+Job ID: 1457794
+Job Name: 9_sc_direct_training
+Node: gx28
+Start Time: Sun Nov 30 01:51:47 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 01:51:47 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   31C    P0             57W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+9_sc_direct_training
+Direct Self-Correction Training (Base - SC)
+Model: llama2
+Language Pair: zh_en
+Using END token: False
+
+Loading training data
+  Train: ../../data/processed/zh_en/self_correction_zh_en/train.tsv
+  Val: ../../data/processed/zh_en/self_correction_zh_en/val.tsv
+  Train samples: 1400
+  Val samples: 200
+
+Loading base model: meta-llama/Llama-2-7b-hf
+
+Setting up LoRA
+trainable params: 16,777,216 || all params: 6,755,192,832 || trainable%: 0.2484
+
+Preparing datasets
+
+Starting training
+  Epochs: 3
+  Effective batch size: 16
+{'loss': 1.0632, 'grad_norm': 0.465984046459198, 'learning_rate': 9.524135262330098e-05, 'epoch': 0.57}
+{'loss': 0.788, 'grad_norm': 0.49879151582717896, 'learning_rate': 7.408768370508576e-05, 'epoch': 1.14}
+{'loss': 0.7242, 'grad_norm': 0.5457369089126587, 'learning_rate': 4.373333832178478e-05, 'epoch': 1.71}
+{'loss': 0.703, 'grad_norm': 0.6223570108413696, 'learning_rate': 1.5772644703565565e-05, 'epoch': 2.27}
+{'eval_loss': 0.7196331024169922, 'eval_runtime': 6.6997, 'eval_samples_per_second': 29.852, 'eval_steps_per_second': 14.926, 'epoch': 2.27}
+{'loss': 0.668, 'grad_norm': 0.6462922692298889, 'learning_rate': 8.856374635655695e-07, 'epoch': 2.85}
+{'train_runtime': 485.748, 'train_samples_per_second': 8.646, 'train_steps_per_second': 0.543, 'train_loss': 0.7826418118043379, 'epoch': 3.0}
+
+Saving adapter to ../models/sc_direct/llama2_zh_en
+
+Training complete.
+Done at: Sun Nov 30 02:00:26 CET 2025

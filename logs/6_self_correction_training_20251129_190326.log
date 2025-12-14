@@ -1,0 +1,63 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/6_self_correction_training_20251129_190326.log
+stderr log: ../logs/6_self_correction_training_20251129_190326.err
+Start Time: Sat Nov 29 19:03:26 CET 2025
+Node: gx04
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 19:03:26 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:25:00.0 Off |                    0 |
+| N/A   32C    P0             37W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Self-Correction Fine-tuning
+Model: llama2
+Language Pair: zh_en
+Using END token: False
+
+Loading training data
+  Train: ../../data/processed/zh_en/self_correction_zh_en/train.tsv
+  Val: ../../data/processed/zh_en/self_correction_zh_en/val.tsv
+  Train samples: 1400
+  Val samples: 200
+
+Loading WMT model: ../models/wmt_merged/llama2_zh_en
+
+Setting up LoRA
+  Rank: 16, Alpha: 32
+  Target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+trainable params: 16,777,216 || all params: 6,755,192,832 || trainable%: 0.2484
+
+Preparing datasets
+
+Starting training
+  Epochs: 3
+  Effective batch size: 16
+  Learning rate: 0.0001
+{'loss': 1.0792, 'grad_norm': 0.41300150752067566, 'learning_rate': 9.524135262330098e-05, 'epoch': 0.57}
+{'loss': 0.7633, 'grad_norm': 0.4763026237487793, 'learning_rate': 7.408768370508576e-05, 'epoch': 1.14}
+{'loss': 0.7045, 'grad_norm': 0.48688367009162903, 'learning_rate': 4.373333832178478e-05, 'epoch': 1.71}
+{'loss': 0.6881, 'grad_norm': 0.5441818833351135, 'learning_rate': 1.5772644703565565e-05, 'epoch': 2.27}
+{'eval_loss': 0.6980804204940796, 'eval_runtime': 7.5028, 'eval_samples_per_second': 26.657, 'eval_steps_per_second': 13.328, 'epoch': 2.27}
+{'loss': 0.6548, 'grad_norm': 0.5776376128196716, 'learning_rate': 8.856374635655695e-07, 'epoch': 2.85}
+{'train_runtime': 516.2846, 'train_samples_per_second': 8.135, 'train_steps_per_second': 0.511, 'train_loss': 0.771333452427026, 'epoch': 3.0}
+
+Saving adapter to ../models/self_correction/llama2_zh_en
+
+Training complete.
+Adapter saved to: ../models/self_correction/llama2_zh_en
+Done at: Sat Nov 29 19:12:36 CET 2025

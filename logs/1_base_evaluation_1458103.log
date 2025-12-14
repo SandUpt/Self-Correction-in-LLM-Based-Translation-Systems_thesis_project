@@ -1,0 +1,59 @@
+Job ID: 1458103
+Job Name: 1_base_evaluation
+Node: gx02
+Start Time: Sun Nov 30 14:01:35 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 14:01:35 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:4C:00.0 Off |                    0 |
+| N/A   33C    P0             62W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+1_base_evaluation
+Base Model Evaluation
+Model: llama2
+Language Pair: de_en
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: meta-llama/Llama-2-7b-hf
+
+Generating translations
+Generation took 7069.3s (0.7 examples/s)
+
+Sample outputs:
+  [0] src: Kurz nachdem sie ihre Beziehung aufgelöst hatte, w...
+      pred: Shortly after she broke up with her boyfriend, it ...
+
+  [1] src: Ich habe von folgendem Schema gehört: Die Webseite...
+      pred: I have heard of the following scheme: The website ...
+
+  [2] src: "Stellt man eine statische Tafel auf, die vor eine...
+      pred: "If you put up a static sign that warns of a dange...
+
+
+Loading COMET model
+Computing metrics
+Results
+  BLEU: 32.91
+  chrF: 59.65
+  TER: 55.74
+  COMET: 0.848
+
+Results saved to ../evaluations/base/llama2_de_en
+Done at: Sun Nov 30 16:00:42 CET 2025

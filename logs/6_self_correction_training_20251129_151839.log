@@ -1,0 +1,62 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/6_self_correction_training_20251129_151839.log
+stderr log: ../logs/6_self_correction_training_20251129_151839.err
+Start Time: Sat Nov 29 15:18:39 CET 2025
+Node: gx27
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 15:18:39 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:81:00.0 Off |                    0 |
+|  0%   59C    P0            121W /  300W |     877MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1277245      C   /usr/bin/python3                        868MiB |
++-----------------------------------------------------------------------------------------+
+Self-Correction Fine-tuning
+Model: qwen
+Language Pair: de_en
+Using END token: True
+
+Loading training data
+  Train: ../../data/processed/de_en/self_correction_de_en_end/train.tsv
+  Val: ../../data/processed/de_en/self_correction_de_en_end/val.tsv
+  Train samples: 1288
+  Val samples: 184
+
+Loading WMT model: ../models/wmt_merged/qwen_de_en
+
+Setting up LoRA
+  Rank: 16, Alpha: 32
+  Target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+trainable params: 10,092,544 || all params: 7,625,709,056 || trainable%: 0.1323
+
+Preparing datasets
+
+Starting training
+  Epochs: 3
+  Effective batch size: 16
+  Learning rate: 0.0001
+{'loss': 1.0844, 'grad_norm': 0.5429785847663879, 'learning_rate': 9.407592573123358e-05, 'epoch': 0.62}
+{'loss': 0.7942, 'grad_norm': 0.5692657232284546, 'learning_rate': 6.929180177215678e-05, 'epoch': 1.24}
+{'loss': 0.7292, 'grad_norm': 0.5466530919075012, 'learning_rate': 3.585381117415349e-05, 'epoch': 1.86}
+{'loss': 0.6976, 'grad_norm': 0.6823842525482178, 'learning_rate': 8.761481442551573e-06, 'epoch': 2.47}
+{'eval_loss': 0.6749870181083679, 'eval_runtime': 8.8435, 'eval_samples_per_second': 20.806, 'eval_steps_per_second': 10.403, 'epoch': 2.47}
+{'train_runtime': 613.9652, 'train_samples_per_second': 6.294, 'train_steps_per_second': 0.396, 'train_loss': 0.8008939562511052, 'epoch': 3.0}
+
+Saving adapter to ../models/self_correction/qwen_de_en_end
+
+Training complete.
+Adapter saved to: ../models/self_correction/qwen_de_en_end
+Done at: Sat Nov 29 15:29:49 CET 2025

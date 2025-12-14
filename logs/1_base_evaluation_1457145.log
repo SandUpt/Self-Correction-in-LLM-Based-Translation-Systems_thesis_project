@@ -1,0 +1,64 @@
+Job ID: 1457145
+Job Name: 1_base_evaluation
+Node: gx02
+Start Time: Sat Nov 29 09:32:41 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 09:32:41 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:8B:00.0 Off |                    0 |
+| N/A   41C    P0             67W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+1_base_evaluation
+============================================================
+Base Model Evaluation
+Model: llama2
+Language Pair: zh_en
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: meta-llama/Llama-2-7b-hf
+
+Generating translations...
+Generation took 8587.9s (0.6 examples/s)
+
+Sample outputs:
+  [0] src: 印度储备银行行长拉古兰·拉詹（Raghuram Rajan）最近呼吁发达经济体央行通过国际合作顾及新...
+      pred: Raghuram Rajan, the governor of the Reserve Bank o...
+
+  [1] src: 当然，这并没有使共产党不那么讨厌自由的媒体和欣欣向荣的文明社会，正是它们可以提供重要的信息反馈以确保...
+      pred: Of course, this does not make the Communist Party ...
+
+  [2] src: 人和人格，以及他们彼此的感觉，能够让小规模的债务看起来如同无法维持，也能够让大规模债务在握手间烟消云...
+      pred: People and personalities, as well as their feeling...
+
+
+Loading COMET model...
+Computing metrics...
+
+============================================================
+Results
+============================================================
+  BLEU: 19.74
+  chrF: 52.58
+  TER: 77.79
+  COMET: 0.829
+
+Results saved to ../evaluations/base/llama2_zh_en
+Done at: Sat Nov 29 11:58:16 CET 2025

@@ -1,0 +1,42 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/1_base_evaluation_jupyter_20251128_235259.log
+stderr log: ../logs/1_base_evaluation_jupyter_20251128_235259.err
+Start Time: Fri Nov 28 23:52:59 CET 2025
+Node: gx04
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Fri Nov 28 23:52:59 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   32C    P0             38W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Base Model Evaluation
+Model: llama2
+Language Pair: zh_en
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: meta-llama/Llama-2-7b-hf
+
+Generating translations
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 有时这一风险包括众所周知的政府与企业之间的“旋转门 ” ， 即私人部门高级岗位与高级官员岗位之间的人事互换。
+English:
+Done at: Fri Nov 28 23:53:58 CET 2025

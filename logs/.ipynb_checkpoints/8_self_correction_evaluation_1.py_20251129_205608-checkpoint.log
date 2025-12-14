@@ -1,0 +1,87 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/8_self_correction_evaluation_1.py_20251129_205608.log
+stderr log: ../logs/8_self_correction_evaluation_1.py_20251129_205608.err
+Start Time: Sat Nov 29 20:56:08 CET 2025
+Node: gx04
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 20:56:08 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:25:00.0 Off |                    0 |
+| N/A   33C    P0             37W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Self-Correction Model Evaluation
+Model: mistral
+Language Pair: de_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/self_correction_merged/mistral_de_en
+
+Generating self-correction outputs...
+Generation took 8546.7s (0.6 examples/s)
+
+Extracting translations...
+Repetitions detected: 22/5000 (0.4%)
+Failed extractions: 0/5000
+Made corrections: 4017/5000 (80.3%)
+
+Sample outputs:
+  [0] initial: Shortly after she had ended her relationship, it w...
+      final:   Not long after she broke up, it was revealed that ...
+
+  [1] initial: I have heard of the following scheme: the website ...
+      final:   I have heard of the following scheme: the website ...
+
+  [2] initial: If you put up a static sign warning of danger, it ...
+      final:   "If you put up a static board warning of danger, i...
+
+Loading COMET model...
+Computing corpus-level metrics...
+Computing per-example metrics...
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 32.79
+  chrF: 58.95
+  TER: 55.07
+  COMET: 0.849
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 33.21
+  chrF: 58.33
+  TER: 55.33
+  COMET: 0.844
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  1866/5000 (37.3%)
+  BLEU degraded:  1928/5000 (38.6%)
+  BLEU unchanged: 1206/5000 (24.1%)
+  COMET improved: 1694/5000 (33.9%)
+  COMET degraded: 2159/5000 (43.2%)
+
+Results saved to ../evaluations/self_correction/mistral_de_en
+Done at: Sat Nov 29 23:21:41 CET 2025

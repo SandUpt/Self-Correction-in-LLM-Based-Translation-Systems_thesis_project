@@ -1,0 +1,76 @@
+Job ID: 1457823
+Job Name: 11_sc_direct_evluation_1
+Node: gx02
+Start Time: Sun Nov 30 02:27:52 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 02:27:52 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:48:00.0 Off |                    0 |
+| N/A   31C    P0             60W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+11_sc_direct_evluation_1
+Direct SC Model Evaluation (Base to SC)
+Model: mistral
+Language Pair: zh_en
+END token version: False
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/sc_direct_merged/mistral_zh_en
+
+Generating self-correction outputs
+Generation took 8266.3s (0.6 examples/s)
+
+Extracting translations
+Repetitions detected: 11/5000 (0.2%)
+Failed extractions: 0/5000
+Made corrections: 85/5000 (1.7%)
+
+Sample outputs:
+  [0] initial: Raghuram Rajan, the governor of the Reserve Bank o
+      final:   Raghuram Rajan, the governor of the Reserve Bank o
+
+  [1] initial: Of course, this does not mean that the Communist P
+      final:   Of course, this does not mean that the Communist P
+
+  [2] initial: Small debts can seem unsustainable, while large de
+      final:   Small debts can seem unsustainable, while large de
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+Initial Translation Metrics
+  BLEU: 27.53
+  chrF: 55.17
+  TER: 64.24
+  COMET: 0.847
+Final Translation Metrics
+  BLEU: 27.5
+  chrF: 55.1
+  TER: 64.23
+  COMET: 0.847
+Self-Correction Analysis
+  BLEU improved:  35/5000 (0.7%)
+  BLEU degraded:  40/5000 (0.8%)
+  BLEU unchanged: 4925/5000 (98.5%)
+  COMET improved: 24/5000 (0.5%)
+  COMET degraded: 54/5000 (1.1%)
+
+Results saved to ../evaluations/sc_direct/mistral_zh_en
+Done at: Sun Nov 30 04:50:24 CET 2025

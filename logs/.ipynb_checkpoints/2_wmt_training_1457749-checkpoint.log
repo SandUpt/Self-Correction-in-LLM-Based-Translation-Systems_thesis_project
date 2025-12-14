@@ -1,0 +1,61 @@
+Job ID: 1457749
+Job Name: 2_wmt_training.py
+Node: gx01
+Start Time: Sun Nov 30 00:44:52 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 00:44:52 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   31C    P0             54W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+2_wmt_training.py
+============================================================
+WMT Fine-tuning
+Model: llama3
+Language Pair: zh_en
+============================================================
+
+Loading training data
+  Train: ../../data/processed/zh_en/train_news_un_balanced_30000.tsv
+  Val: ../../data/processed/zh_en/mix2k_dev.tsv
+  Train samples: 30000
+  Val samples: 2000
+
+Loading model: meta-llama/Meta-Llama-3-8B
+
+Setting up LoRA
+  Rank: 16, Alpha: 32
+  Target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+trainable params: 13,631,488 || all params: 8,043,892,736 || trainable%: 0.1695
+
+Preparing datasets
+
+Starting training
+  Epochs: 3
+  Effective batch size: 16
+  Learning rate: 0.0001
+{'loss': 1.2732, 'grad_norm': 1.852638840675354, 'learning_rate': 1.7375886524822697e-05, 'epoch': 0.03}
+{'loss': 0.7151, 'grad_norm': 0.6504985094070435, 'learning_rate': 3.5106382978723407e-05, 'epoch': 0.05}
+{'loss': 0.6754, 'grad_norm': 0.8005422353744507, 'learning_rate': 5.283687943262412e-05, 'epoch': 0.08}
+{'loss': 0.6244, 'grad_norm': 1.0431138277053833, 'learning_rate': 7.056737588652482e-05, 'epoch': 0.11}
+{'loss': 0.6204, 'grad_norm': 0.8043088912963867, 'learning_rate': 8.829787234042553e-05, 'epoch': 0.13}
+{'loss': 0.6368, 'grad_norm': 1.191440224647522, 'learning_rate': 9.999750216565724e-05, 'epoch': 0.16}
+{'loss': 0.6369, 'grad_norm': 0.7853909134864807, 'learning_rate': 9.996120615348041e-05, 'epoch': 0.19}
+{'loss': 0.6485, 'grad_norm': 1.0352429151535034, 'learning_rate': 9.988173129447252e-05, 'epoch': 0.21}
+{'loss': 0.6325, 'grad_norm': 0.9102717638015747, 'learning_rate': 9.975914627458066e-05, 'epoch': 0.24}
+{'loss': 0.6118, 'grad_norm': 0.8238329291343689, 'learning_rate': 9.959355703760014e-05, 'epoch': 0.27}

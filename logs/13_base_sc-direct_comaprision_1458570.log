@@ -1,0 +1,55 @@
+Job ID: 1458570
+Job Name: 13_base_sc-direct_comaprision
+Node: gx02
+Start Time: Sun Nov 30 20:36:55 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 20:36:55 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:88:00.0 Off |                    0 |
+| N/A   31C    P0             62W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+13_base_sc-direct_comaprision
+Base vs Direct SC comparison
+Model: mistral, Lang: zh_en
+
+Loading base results from ../evaluations/base/mistral_zh_en/results.csv
+Loading SC results from ../evaluations/sc_direct/mistral_zh_en/results.csv
+Base columns: ['source', 'reference', 'prediction', 'bleu', 'comet']
+SC columns: ['source', 'reference', 'initial_translation', 'analysis', 'corrected_translation', 'initial_bleu', 'final_bleu', 'bleu_change', 'initial_comet', 'final_comet', 'comet_change', 'raw_output']
+
+Per-example BLEU comparison (SC final vs Base):
+  SC better: 3939/5000 (78.8%)
+  SC worse: 1000/5000 (20.0%)
+  Similar: 61/5000 (1.2%)
+  Avg BLEU diff: 8.61
+
+Per-example COMET comparison (SC final vs Base):
+  SC better: 3874/5000 (77.5%)
+  SC worse: 1022/5000 (20.4%)
+  Similar: 104/5000 (2.1%)
+  Avg COMET diff: 0.0284
+
+Corpus level metrics:
+Metric       Base    SC Init   SC Final     Diff
+BLEU        17.02      27.53       27.5   +10.48
+chrF         50.5      55.17       55.1    +4.60
+TER         81.76      64.24      64.23   -17.53
+COMET       0.819      0.847      0.847    +0.03
+
+Saved to ../evaluations/comparison_direct/mistral_zh_en
+Done at: Sun Nov 30 20:36:56 CET 2025

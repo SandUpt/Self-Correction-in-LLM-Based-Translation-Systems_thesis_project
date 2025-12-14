@@ -1,0 +1,24 @@
++ echo 'Job ID: 1459948'
++ echo 'Job Name: 6_self_correction_training'
++ echo 'Node: gx01'
+++ date
++ echo 'Start Time: Tue Dec  2 01:57:34 CET 2025'
+++ pwd
++ echo 'Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files'
++ nvidia-smi
++ cd /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/
++ export TOKENIZERS_PARALLELISM=false
++ TOKENIZERS_PARALLELISM=false
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ echo 6_self_correction_training
++ python3 6_self_correction_training.py
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.01it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:02,  1.00s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.05it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.50it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.28it/s]
+Tokenizing:   0%|          | 0/1000 [00:00<?, ? examples/s]Tokenizing: 100%|██████████| 1000/1000 [00:00<00:00, 1203.63 examples/s]Tokenizing: 100%|██████████| 1000/1000 [00:00<00:00, 1198.17 examples/s]
+Tokenizing:   0%|          | 0/200 [00:00<?, ? examples/s]Tokenizing: 100%|██████████| 200/200 [00:00<00:00, 1561.32 examples/s]Tokenizing: 100%|██████████| 200/200 [00:00<00:00, 1544.04 examples/s]
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+  0%|          | 0/189 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  1%|          | 1/189 [00:02<07:15,  2.32s/it]  1%|          | 2/189 [00:03<05:57,  1.91s/it]  2%|▏         | 3/189 [00:05<05:30,  1.78s/it]  2%|▏         | 4/189 [00:07<05:16,  1.71s/it]  3%|▎         | 5/189 [00:08<05:08,  1.68s/it]  3%|▎         | 6/189 [00:10<05:02,  1.65s/it]  4%|▎         | 7/189 [00:12<04:58,  1.64s/it]  4%|▍         | 8/189 [00:13<04:55,  1.63s/it]  5%|▍         | 9/189 [00:15<04:52,  1.62s/it]  5%|▌         | 10/189 [00:16<04:49,  1.62s/it]  6%|▌         | 11/189 [00:18<04:47,  1.61s/it]  6%|▋         | 12/189 [00:20<04:45,  1.61s/it]  7%|▋         | 13/189 [00:21<04:43,  1.61s/it]  7%|▋         | 14/189 [00:23<04:42,  1.61s/it]  8%|▊         | 15/189 [00:24<04:40,  1.61s/it]  8%|▊         | 16/189 [00:26<04:38,  1.61s/it]  9%|▉         | 17/189 [00:28<04:36,  1.61s/it] 10%|▉         | 18/189 [00:29<04:35,  1.61s/it] 10%|█         | 19/189 [00:31<04:34,  1.61s/it] 11%|█         | 20/189 [00:32<04:32,  1.61s/it] 11%|█         | 21/189 [00:34<04:31,  1.61s/it] 12%|█▏        | 22/189 [00:36<04:29,  1.61s/it] 12%|█▏        | 23/189 [00:37<04:29,  1.63s/it] 13%|█▎        | 24/189 [00:39<04:27,  1.62s/it] 13%|█▎        | 25/189 [00:41<04:27,  1.63s/it] 14%|█▍        | 26/189 [00:42<04:24,  1.63s/it] 14%|█▍        | 27/189 [00:44<04:22,  1.62s/it] 15%|█▍        | 28/189 [00:45<04:20,  1.62s/it] 15%|█▌        | 29/189 [00:47<04:18,  1.61s/it] 16%|█▌        | 30/189 [00:49<04:16,  1.61s/it] 16%|█▋        | 31/189 [00:50<04:14,  1.61s/it] 17%|█▋        | 32/189 [00:52<04:13,  1.61s/it] 17%|█▋        | 33/189 [00:53<04:10,  1.61s/it] 18%|█▊        | 34/189 [00:55<04:09,  1.61s/it] 19%|█▊        | 35/189 [00:57<04:08,  1.61s/it] 19%|█▉        | 36/189 [00:58<04:06,  1.61s/it] 20%|█▉        | 37/189 [01:00<04:05,  1.61s/it] 20%|██        | 38/189 [01:02<04:03,  1.61s/it] 21%|██        | 39/189 [01:03<04:01,  1.61s/it] 21%|██        | 40/189 [01:05<04:00,  1.62s/it] 22%|██▏       | 41/189 [01:06<03:59,  1.62s/it] 22%|██▏       | 42/189 [01:08<03:57,  1.61s/it] 23%|██▎       | 43/189 [01:10<03:55,  1.62s/it] 23%|██▎       | 44/189 [01:11<03:55,  1.62s/it] 24%|██▍       | 45/189 [01:13<03:53,  1.62s/it] 24%|██▍       | 46/189 [01:14<03:51,  1.62s/it] 25%|██▍       | 47/189 [01:16<03:49,  1.61s/it] 25%|██▌       | 48/189 [01:18<03:47,  1.61s/it] 26%|██▌       | 49/189 [01:19<03:45,  1.61s/it] 26%|██▋       | 50/189 [01:21<03:44,  1.61s/it]                                                 26%|██▋       | 50/189 [01:21<03:44,  1.61s/it]

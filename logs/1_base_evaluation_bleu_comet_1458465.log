@@ -1,0 +1,61 @@
+Job ID: 1458465
+Job Name: 1_base_evaluation_bleu_comet
+Node: gx25
+Start Time: Sun Nov 30 18:23:47 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 18:23:47 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:46:00.0 Off |                    0 |
+| N/A   30C    P0             57W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+1_base_evaluation_bleu_comet
+Base Model Evaluation
+Model: qwen
+Language Pair: de_en
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: Qwen/Qwen2.5-7B
+
+Generating translations
+Generation took 1651.7s (3.0 examples/s)
+
+Sample outputs:
+  [0] src: Kurz nachdem sie ihre Beziehung aufgelöst hatte, w...
+      pred: Shortly after she had dissolved her relationship, ...
+
+  [1] src: Ich habe von folgendem Schema gehört: Die Webseite...
+      pred: I have heard of the following scheme: The website ...
+
+  [2] src: "Stellt man eine statische Tafel auf, die vor eine...
+      pred: "If you put up a static sign warning of a danger, ...
+
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+Results:
+  BLEU: 34.09
+  chrF: 60.14
+  TER: 54.61
+  COMET: 0.848
+
+Results saved to ../evaluations/base/qwen_de_en
+Done at: Sun Nov 30 18:53:03 CET 2025

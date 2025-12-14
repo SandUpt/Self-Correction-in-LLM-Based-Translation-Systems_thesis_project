@@ -1,0 +1,82 @@
+Job ID: 1460013
+Job Name: 8_self_correction_evaluation_1
+Node: gx25
+Start Time: Tue Dec  2 08:05:07 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Tue Dec  2 08:05:07 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:84:00.0 Off |                    0 |
+| N/A   34C    P0             58W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+8_self_correction_evaluation_1
+Self-Correction Model Evaluation
+Model: qwen
+Language Pair: de_en
+END token version: False
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/self_correction_merged/qwen_de_en_70_30
+
+Generating self-correction outputs
+Generation took 5341.8s (0.9 examples/s)
+
+Extracting translations
+Repetitions detected: 4116/5000 (82.3%)
+Failed extractions: 18/5000
+Made corrections: 3549/5000 (71.0%)
+
+Sample outputs:
+  [0] initial: Shortly after she had ended her relationship, it w...
+      final:   Shortly after she had broken up, it was revealed t...
+
+  [1] initial: I have heard of the following scheme: the website ...
+      final:   I have heard of the following scheme: the website ...
+
+  [2] initial: If you put up a static sign warning of a danger, i...
+      final:   "If you put up a static sign, it will probably soo...
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+============================================================
+Initial Translation Metrics
+  BLEU: 34.19
+  chrF: 60.09
+  TER: 53.59
+  COMET: 0.853
+
+============================================================
+Final Translation Metrics
+  BLEU: 24.2
+  chrF: 54.94
+  TER: 94.06
+  COMET: 0.833
+
+============================================================
+Self-Correction Analysis
+  BLEU improved:  1503/5000 (30.1%)
+  BLEU degraded:  1844/5000 (36.9%)
+  BLEU unchanged: 1653/5000 (33.1%)
+  COMET improved: 1415/5000 (28.3%)
+  COMET degraded: 1990/5000 (39.8%)
+
+Results saved to ../evaluations/self_correction/qwen_de_en_70_30
+Done at: Tue Dec  2 09:39:05 CET 2025

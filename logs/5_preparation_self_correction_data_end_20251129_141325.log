@@ -1,0 +1,43 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/5_preparation_self_correction_data_end_20251129_141325.log
+stderr log: ../logs/5_preparation_self_correction_data_end_20251129_141325.err
+Start Time: Sat Nov 29 14:13:25 CET 2025
+Node: gx04
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 14:13:25 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:25:00.0 Off |                    0 |
+| N/A   32C    P0             37W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Adding |||END||| to Self-Correction Data
+Language Pair: zh_en
+============================================================
+
+Processing train
+  Input:  ../../data/processed/zh_en/self_correction_zh_en/train.tsv
+  Output: ../../data/processed/zh_en/self_correction_zh_en_end/train.tsv
+  Processed 1400 examples
+
+Processing val
+  Input:  ../../data/processed/zh_en/self_correction_zh_en/val.tsv
+  Output: ../../data/processed/zh_en/self_correction_zh_en_end/val.tsv
+  Processed 200 examples
+
+Done.
+Done at: Sat Nov 29 14:13:26 CET 2025

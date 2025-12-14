@@ -1,0 +1,73 @@
+Job ID: 1458587
+Job Name: 11_sc_direct_evluation_2
+Node: gx02
+Start Time: Sun Nov 30 21:04:00 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 21:04:00 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:88:00.0 Off |                    0 |
+| N/A   32C    P0             62W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+11_sc_direct_evluation_2
+Direct SC Model Evaluation Base to SC
+Model: llama2
+Language Pair: de_en
+END token version: False
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/sc_direct_merged/llama2_de_en
+
+Generating
+Generation took 13813.5s
+
+Extracting translations
+Failed extractions: 0/5000
+Made corrections: 3988/5000
+
+Sample outputs:
+  [0] initial: Shortly after they had broken up, it was announced that she ...
+      final:   Shortly after she broke up with him, she found out that she ...
+
+  [1] initial: I have heard of the following scheme: the website is normall...
+      final:   I have heard of the following scheme: the website is normall...
+
+  [2] initial: Kořán says that if you put a static sign up, warning of a da...
+      final:   "Place a static sign which warns of danger, this will soon b...
+
+Loading COMET
+Computing metrics
+Initial Translation Metrics
+  BLEU: 32.48
+  chrF: 58.73
+  TER: 55.35
+  COMET: 0.848
+Final Translation Metrics
+  BLEU: 26.34
+  chrF: 51.17
+  TER: 76.79
+  COMET: 0.741
+Self-Correction Analysis
+  BLEU improved:  1043/5000 (20.9%)
+  BLEU degraded:  2813/5000 (56.3%)
+  COMET improved: 809/5000 (16.2%)
+  COMET degraded: 3101/5000 (62.0%)
+
+Results saved to ../evaluations/sc_direct/llama2_de_en_eval_2
+Done at: Mon Dec  1 00:57:45 CET 2025

@@ -1,0 +1,59 @@
+Job ID: 1457792
+Job Name: 9_sc_direct_training
+Node: gx02
+Start Time: Sun Nov 30 01:50:47 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 01:50:47 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:48:00.0 Off |                    0 |
+| N/A   31C    P0             59W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+9_sc_direct_training
+Direct Self-Correction Training (Base - SC)
+Model: mistral
+Language Pair: zh_en
+Using END token: False
+
+Loading training data
+  Train: ../../data/processed/zh_en/self_correction_zh_en/train.tsv
+  Val: ../../data/processed/zh_en/self_correction_zh_en/val.tsv
+  Train samples: 1400
+  Val samples: 200
+
+Loading base model: mistralai/Mistral-7B-Instruct-v0.1
+
+Setting up LoRA
+trainable params: 13,631,488 || all params: 7,255,363,584 || trainable%: 0.1879
+
+Preparing datasets
+
+Starting training
+  Epochs: 3
+  Effective batch size: 16
+{'loss': 1.1032, 'grad_norm': 1.225928544998169, 'learning_rate': 9.524135262330098e-05, 'epoch': 0.57}
+{'loss': 0.8388, 'grad_norm': 1.1133931875228882, 'learning_rate': 7.408768370508576e-05, 'epoch': 1.14}
+{'loss': 0.7467, 'grad_norm': 1.2334842681884766, 'learning_rate': 4.373333832178478e-05, 'epoch': 1.71}
+{'loss': 0.7052, 'grad_norm': 1.4352043867111206, 'learning_rate': 1.5772644703565565e-05, 'epoch': 2.27}
+{'eval_loss': 0.7889796495437622, 'eval_runtime': 6.6151, 'eval_samples_per_second': 30.234, 'eval_steps_per_second': 15.117, 'epoch': 2.27}
+{'loss': 0.6475, 'grad_norm': 1.3663846254348755, 'learning_rate': 8.856374635655695e-07, 'epoch': 2.85}
+{'train_runtime': 506.9168, 'train_samples_per_second': 8.285, 'train_steps_per_second': 0.521, 'train_loss': 0.7997892950520371, 'epoch': 3.0}
+
+Saving adapter to ../models/sc_direct/mistral_zh_en
+
+Training complete.
+Done at: Sun Nov 30 01:59:52 CET 2025

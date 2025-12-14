@@ -1,0 +1,81 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|                                                                                   | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|█████████████████████████                                                  | 1/3 [00:06<00:13,  6.83s/it]Loading checkpoint shards:  67%|██████████████████████████████████████████████████                         | 2/3 [00:14<00:07,  7.13s/it]Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████| 3/3 [00:19<00:00,  6.45s/it]Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████| 3/3 [00:19<00:00,  6.61s/it]
+Generating:   0%|                                                                                                 | 0/16 [00:00<?, ?it/s]The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Generating:   0%|                                                                                                 | 0/16 [01:06<?, ?it/s]
+Traceback (most recent call last):
+  File "/sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/4_wmt_evaluation.py", line 312, in <module>
+    main()
+  File "/sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/4_wmt_evaluation.py", line 251, in main
+    predictions = generate_translations(model, tokenizer, sources, config.PROMPT_TEMPLATE)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/4_wmt_evaluation.py", line 157, in generate_translations
+    outputs = model.generate(
+              ^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/generation/utils.py", line 2564, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/generation/utils.py", line 3265, in _beam_search
+    model_outputs = self(**model_inputs, return_dict=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 459, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/utils/generic.py", line 1064, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 395, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/modeling_layers.py", line 94, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 294, in forward
+    hidden_states, _ = self.self_attn(
+                       ^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 246, in forward
+    key_states, value_states = past_key_values.update(key_states, value_states, self.layer_idx, cache_kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/cache_utils.py", line 776, in update
+    keys, values = self.layers[layer_idx].update(key_states, value_states, cache_kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sc/home/sandeep.uprety/.local/lib/python3.12/site-packages/transformers/cache_utils.py", line 119, in update
+    self.keys = torch.cat([self.keys, key_states], dim=-2)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 410.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 411.56 MiB is free. Including non-PyTorch memory, this process has 39.09 GiB memory in use. Of the allocated memory 38.18 GiB is allocated by PyTorch, and 415.05 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

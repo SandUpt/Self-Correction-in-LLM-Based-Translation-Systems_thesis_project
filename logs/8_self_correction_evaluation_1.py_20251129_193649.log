@@ -1,0 +1,87 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/8_self_correction_evaluation_1.py_20251129_193649.log
+stderr log: ../logs/8_self_correction_evaluation_1.py_20251129_193649.err
+Start Time: Sat Nov 29 19:36:49 CET 2025
+Node: gx05
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 19:36:49 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   36C    P0             39W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Self-Correction Model Evaluation
+Model: llama2
+Language Pair: zh_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: ../models/self_correction_merged/llama2_zh_en
+
+Generating self-correction outputs...
+Generation took 1749.7s (0.3 examples/s)
+
+Extracting translations...
+Repetitions detected: 0/500 (0.0%)
+Failed extractions: 0/500
+Made corrections: 6/500 (1.2%)
+
+Sample outputs:
+  [0] initial: At times, this risk includes the well-known “revol...
+      final:   At times, this risk includes the well-known “revol...
+
+  [1] initial: Like Bjørn Lomborg, director of the Copenhagen Con...
+      final:   Like Bjørn Lomborg, director of the Copenhagen Con...
+
+  [2] initial: In 2001, the Football Association (FA) launched a ...
+      final:   In 2001, the Football Association (FA) launched a ...
+
+Loading COMET model...
+Computing corpus-level metrics...
+Computing per-example metrics...
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 30.96
+  chrF: 58.34
+  TER: 59.38
+  COMET: 0.859
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 30.89
+  chrF: 58.31
+  TER: 59.45
+  COMET: 0.859
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  1/500 (0.2%)
+  BLEU degraded:  5/500 (1.0%)
+  BLEU unchanged: 494/500 (98.8%)
+  COMET improved: 1/500 (0.2%)
+  COMET degraded: 4/500 (0.8%)
+
+Results saved to ../evaluations/self_correction/llama2_zh_en
+Done at: Sat Nov 29 20:06:49 CET 2025

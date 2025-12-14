@@ -1,0 +1,87 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/8_self_correction_evaluation_2_20251129_204058.log
+stderr log: ../logs/8_self_correction_evaluation_2_20251129_204058.err
+Start Time: Sat Nov 29 20:40:58 CET 2025
+Node: gx03
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 20:40:58 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   31C    P0             36W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Self-Correction Model Evaluation
+Model: qwen
+Language Pair: zh_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: ../models/self_correction_merged/qwen_zh_en
+
+Generating self-correction outputs
+Generation took 546.4s (0.9 examples/s)
+
+Extracting translations
+Repetitions detected: 348/500 (69.6%)
+Failed extractions: 0/500
+Made corrections: 5/500 (1.0%)
+
+Sample outputs:
+  [0] initial: At times, this risk includes the well-known “revol...
+      final:   At times, this risk includes the well-known “revol...
+
+  [1] initial: Bjorn Lomborg, director of the Copenhagen Consensu...
+      final:   Bjorn Lomborg, director of the Copenhagen Consensu...
+
+  [2] initial: In 2001, the Football Association of England (FA),...
+      final:   In 2001, the Football Association of England (FA),...
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 33.85
+  chrF: 60.42
+  TER: 57.13
+  COMET: 0.866
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 33.89
+  chrF: 60.44
+  TER: 57.07
+  COMET: 0.866
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  3/500 (0.6%)
+  BLEU degraded:  2/500 (0.4%)
+  BLEU unchanged: 495/500 (99.0%)
+  COMET improved: 2/500 (0.4%)
+  COMET degraded: 2/500 (0.4%)
+
+Results saved to ../evaluations/self_correction/qwen_zh_en
+Done at: Sat Nov 29 20:51:21 CET 2025

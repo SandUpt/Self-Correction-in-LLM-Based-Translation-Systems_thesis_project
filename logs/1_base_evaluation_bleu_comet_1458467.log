@@ -1,0 +1,61 @@
+Job ID: 1458467
+Job Name: 1_base_evaluation_bleu_comet
+Node: gx02
+Start Time: Sun Nov 30 18:25:11 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 18:25:11 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:8B:00.0 Off |                    0 |
+| N/A   33C    P0             64W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+1_base_evaluation_bleu_comet
+Base Model Evaluation
+Model: mistral
+Language Pair: de_en
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: mistralai/Mistral-7B-Instruct-v0.1
+
+Generating translations
+Generation took 895.5s (5.6 examples/s)
+
+Sample outputs:
+  [0] src: Kurz nachdem sie ihre Beziehung aufgelöst hatte, w...
+      pred: Shortly after she ended her relationship, it becam...
+
+  [1] src: Ich habe von folgendem Schema gehört: Die Webseite...
+      pred: I heard of the following schema: The website is us...
+
+  [2] src: "Stellt man eine statische Tafel auf, die vor eine...
+      pred: According to Kořán, if a static warning table is p...
+
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+Results:
+  BLEU: 31.28
+  chrF: 57.91
+  TER: 57.33
+  COMET: 0.841
+
+Results saved to ../evaluations/base/mistral_de_en
+Done at: Sun Nov 30 18:41:53 CET 2025

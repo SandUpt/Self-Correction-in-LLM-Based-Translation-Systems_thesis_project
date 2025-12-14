@@ -1,0 +1,63 @@
+Job ID: 1457294
+Job Name: 4_wmt_evaluation.py
+Node: gx02
+Start Time: Sat Nov 29 13:21:02 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 13:21:02 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:C8:00.0 Off |                    0 |
+| N/A   31C    P0             65W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+4_wmt_evaluation.py
+============================================================
+WMT Model Evaluation
+Model: llama2
+Language Pair: zh_en
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/wmt_merged/llama2_zh_en
+
+Generating translations...
+Generation took 8721.6s (0.6 examples/s)
+
+Sample outputs:
+  [0] src: 印度储备银行行长拉古兰·拉詹（Raghuram Rajan）最近呼吁发达经济体央行通过国际合作顾及新...
+      pred: Raghuram Rajan, Governor of the Reserve Bank of In...
+
+  [1] src: 当然，这并没有使共产党不那么讨厌自由的媒体和欣欣向荣的文明社会，正是它们可以提供重要的信息反馈以确保...
+      pred: Of course, this does not make the Communist Party ...
+
+  [2] src: 人和人格，以及他们彼此的感觉，能够让小规模的债务看起来如同无法维持，也能够让大规模债务在握手间烟消云...
+      pred: People and personalities, and the feelings they ge...
+
+Loading COMET model...
+Computing metrics...
+
+============================================================
+Results
+============================================================
+  BLEU: 31.22
+  chrF: 58.02
+  TER: 58.33
+  COMET: 0.856
+
+Results saved to ../evaluations/wmt/llama2_zh_en
+Done at: Sat Nov 29 15:48:21 CET 2025

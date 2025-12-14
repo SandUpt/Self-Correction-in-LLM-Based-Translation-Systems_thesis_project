@@ -1,0 +1,72 @@
+Job ID: 1457932
+Job Name: 2_wmt_training
+Node: gx25
+Start Time: Sun Nov 30 09:48:45 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 09:48:45 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:07:00.0 Off |                    0 |
+| N/A   39C    P0             57W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+2_wmt_training
+============================================================
+WMT Fine-tuning
+Model: llama3
+Language Pair: de_en
+============================================================
+
+Loading training data
+  Train: ../../data/processed/de_en/train_europarl_newstest_balanced_26000.tsv
+  Val: ../../data/processed/de_en/mix2k_dev.tsv
+  Train samples: 26000
+  Val samples: 1999
+
+Loading model: meta-llama/Meta-Llama-3-8B
+
+Setting up LoRA
+  Rank: 16, Alpha: 32
+  Target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+trainable params: 13,631,488 || all params: 8,043,892,736 || trainable%: 0.1695
+
+Preparing datasets
+
+Starting training
+  Epochs: 3
+  Effective batch size: 16
+  Learning rate: 0.0001
+{'loss': 1.6249, 'grad_norm': 1.6810745000839233, 'learning_rate': 2.0081967213114755e-05, 'epoch': 0.03}
+{'loss': 0.8743, 'grad_norm': 0.8592216968536377, 'learning_rate': 4.057377049180328e-05, 'epoch': 0.06}
+{'loss': 0.855, 'grad_norm': 1.0450719594955444, 'learning_rate': 6.10655737704918e-05, 'epoch': 0.09}
+{'loss': 0.8301, 'grad_norm': 0.9997121691703796, 'learning_rate': 8.155737704918032e-05, 'epoch': 0.12}
+{'loss': 0.8441, 'grad_norm': 0.9454529285430908, 'learning_rate': 9.999971237291203e-05, 'epoch': 0.15}
+{'loss': 0.8623, 'grad_norm': 0.8938636183738708, 'learning_rate': 9.996520112627602e-05, 'epoch': 0.18}
+{'loss': 0.82, 'grad_norm': 0.7658501267433167, 'learning_rate': 9.987320995457625e-05, 'epoch': 0.22}
+{'loss': 0.8194, 'grad_norm': 0.86100172996521, 'learning_rate': 9.972384468437874e-05, 'epoch': 0.25}
+{'loss': 0.8178, 'grad_norm': 0.7001951932907104, 'learning_rate': 9.951727714536386e-05, 'epoch': 0.28}
+{'loss': 0.8658, 'grad_norm': 0.8045905828475952, 'learning_rate': 9.925374497265355e-05, 'epoch': 0.31}
+{'eval_loss': 0.8177748322486877, 'eval_runtime': 51.711, 'eval_samples_per_second': 38.657, 'eval_steps_per_second': 19.338, 'epoch': 0.31}
+{'loss': 0.8284, 'grad_norm': 0.7525880932807922, 'learning_rate': 9.893355133343611e-05, 'epoch': 0.34}
+{'loss': 0.827, 'grad_norm': 0.7700954675674438, 'learning_rate': 9.8557064578203e-05, 'epoch': 0.37}
+{'loss': 0.8167, 'grad_norm': 0.6175194978713989, 'learning_rate': 9.812471781699857e-05, 'epoch': 0.4}
+{'loss': 0.7997, 'grad_norm': 0.7809846997261047, 'learning_rate': 9.76370084211708e-05, 'epoch': 0.43}
+{'loss': 0.8326, 'grad_norm': 0.6656531095504761, 'learning_rate': 9.709449745119565e-05, 'epoch': 0.46}
+{'loss': 0.8518, 'grad_norm': 0.8237669467926025, 'learning_rate': 9.649780901123357e-05, 'epoch': 0.49}
+{'loss': 0.8061, 'grad_norm': 0.720057487487793, 'learning_rate': 9.58476295311606e-05, 'epoch': 0.52}
+{'loss': 0.8162, 'grad_norm': 0.6748267412185669, 'learning_rate': 9.51447069769e-05, 'epoch': 0.55}
+{'loss': 0.8116, 'grad_norm': 0.7162894010543823, 'learning_rate': 9.438984998996298e-05, 'epoch': 0.58}
+{'loss': 0.8309, 'grad_norm': 0.6132400035858154, 'learning_rate': 9.358392695718805e-05, 'epoch': 0.62}

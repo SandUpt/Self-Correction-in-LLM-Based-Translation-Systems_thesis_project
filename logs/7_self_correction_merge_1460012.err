@@ -1,0 +1,21 @@
++ echo 'Job ID: 1460012'
++ echo 'Job Name: 7_self_correction_merge'
++ echo 'Node: gx02'
+++ date
++ echo 'Start Time: Tue Dec  2 08:02:08 CET 2025'
+++ pwd
++ echo 'Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files'
++ nvidia-smi
++ cd /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/
++ export TOKENIZERS_PARALLELISM=false
++ TOKENIZERS_PARALLELISM=false
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ echo 7_self_correction_merge.py
++ python3 7_self_correction_merge.py
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.03s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.04s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:00,  1.01it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.45it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.23it/s]
+++ date
++ echo 'Done at: Tue Dec  2 08:03:10 CET 2025'

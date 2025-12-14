@@ -1,0 +1,21 @@
++ echo 'Job ID: 1457271'
++ echo 'Job Name: 1_base_evaluation'
++ echo 'Node: gx25'
+++ date
++ echo 'Start Time: Sat Nov 29 12:52:59 CET 2025'
+++ pwd
++ echo 'Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files'
++ nvidia-smi
++ cd /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/
++ export TOKENIZERS_PARALLELISM=false
++ TOKENIZERS_PARALLELISM=false
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ echo 1_base_evaluation
++ python3 1_base_evaluation.py
+`torch_dtype` is deprecated! Use `dtype` instead!
+We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:16<00:16, 16.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:24<00:00, 11.68s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:24<00:00, 12.39s/it]
+Generating:   0%|          | 0/157 [00:00<?, ?it/s]Generating:   1%|          | 1/157 [00:09<23:41,  9.11s/it]Generating:   1%|▏         | 2/157 [00:14<17:16,  6.69s/it]Generating:   2%|▏         | 3/157 [00:20<17:08,  6.68s/it]Generating:   3%|▎         | 4/157 [00:27<16:48,  6.59s/it]Generating:   3%|▎         | 5/157 [00:34<17:32,  6.93s/it]Generating:   4%|▍         | 6/157 [00:46<21:27,  8.53s/it]Generating:   4%|▍         | 7/157 [00:52<19:36,  7.84s/it]Generating:   5%|▌         | 8/157 [01:00<19:29,  7.85s/it]Generating:   6%|▌         | 9/157 [01:08<19:24,  7.87s/it]Generating:   6%|▋         | 10/157 [01:44<40:24, 16.49s/it]Generating:   7%|▋         | 11/157 [01:52<34:13, 14.07s/it]Generating:   8%|▊         | 12/157 [01:58<28:04, 11.62s/it]Generating:   8%|▊         | 13/157 [02:20<34:53, 14.54s/it]Generating:   9%|▉         | 14/157 [02:27<29:07, 12.22s/it]Generating:  10%|▉         | 15/157 [02:35<25:52, 10.93s/it]Generating:  10%|█         | 16/157 [02:41<22:48,  9.71s/it]Generating:  11%|█         | 17/157 [02:49<20:52,  8.94s/it]Generating:  11%|█▏        | 18/157 [02:57<20:12,  8.72s/it]Generating:  12%|█▏        | 19/157 [03:03<18:37,  8.10s/it]Generating:  13%|█▎        | 20/157 [03:12<18:52,  8.26s/it]Generating:  13%|█▎        | 21/157 [03:18<17:26,  7.69s/it]Generating:  14%|█▍        | 22/157 [03:25<16:21,  7.27s/it]Generating:  15%|█▍        | 23/157 [03:31<15:46,  7.06s/it]Generating:  15%|█▌        | 24/157 [03:43<18:30,  8.35s/it]Generating:  16%|█▌        | 25/157 [03:51<18:18,  8.32s/it]Generating:  17%|█▋        | 26/157 [03:58<17:05,  7.83s/it]Generating:  17%|█▋        | 27/157 [04:06<17:02,  7.87s/it]Generating:  18%|█▊        | 28/157 [04:12<15:58,  7.43s/it]Generating:  18%|█▊        | 29/157 [04:17<14:07,  6.62s/it]Generating:  19%|█▉        | 30/157 [04:23<13:54,  6.57s/it]Generating:  20%|█▉        | 31/157 [04:28<13:00,  6.19s/it]Generating:  20%|██        | 32/157 [04:35<13:08,  6.31s/it]Generating:  21%|██        | 33/157 [04:41<12:45,  6.17s/it]Generating:  22%|██▏       | 34/157 [04:57<18:50,  9.19s/it]Generating:  22%|██▏       | 35/157 [05:05<18:03,  8.88s/it]Generating:  23%|██▎       | 36/157 [05:13<17:17,  8.57s/it]

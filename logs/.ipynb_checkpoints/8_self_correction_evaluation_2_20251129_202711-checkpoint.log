@@ -1,0 +1,87 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/8_self_correction_evaluation_2_20251129_202711.log
+stderr log: ../logs/8_self_correction_evaluation_2_20251129_202711.err
+Start Time: Sat Nov 29 20:27:11 CET 2025
+Node: gx04
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 20:27:11 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   31C    P0             38W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Self-Correction Model Evaluation
+Model: mistral
+Language Pair: zh_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: ../models/self_correction_merged/mistral_zh_en
+
+Generating self-correction outputs
+Generation took 895.6s (0.6 examples/s)
+
+Extracting translations
+Repetitions detected: 1/500 (0.2%)
+Failed extractions: 0/500
+Made corrections: 459/500 (91.8%)
+
+Sample outputs:
+  [0] initial: At times, this risk includes the well-known “revol...
+      final:   At times, this risk includes the...
+
+  [1] initial: Compared to Jørn Riisager, director of the Copenha...
+      final:   Compared to Jørn Riisager, director of...
+
+  [2] initial: In 2001, the Football Association launched a five-...
+      final:   In 2001, the Football Association launched a five-...
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 30.35
+  chrF: 57.65
+  TER: 60.78
+  COMET: 0.857
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 21.89
+  chrF: 45.18
+  TER: 79.82
+  COMET: 0.709
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  37/500 (7.4%)
+  BLEU degraded:  420/500 (84.0%)
+  BLEU unchanged: 43/500 (8.6%)
+  COMET improved: 3/500 (0.6%)
+  COMET degraded: 454/500 (90.8%)
+
+Results saved to ../evaluations/self_correction/mistral_zh_en
+Done at: Sat Nov 29 20:43:02 CET 2025

@@ -1,0 +1,63 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/4_wmt_evaluation_20251129_042723.log
+stderr log: ../logs/4_wmt_evaluation_20251129_042723.err
+Start Time: Sat Nov 29 04:27:23 CET 2025
+Node: gx06
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 04:27:23 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   31C    P0             37W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+WMT Model Evaluation
+Model: qwen
+Language Pair: de_en
+============================================================
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: ../models/wmt_merged/qwen_de_en
+
+Generating translations...
+Generation took 38.2s (13.1 examples/s)
+
+Sample outputs:
+  [0] src: Diejenigen, die leistungsstarke Kinder untersuchen...
+      pred: Those who study high-achieving children say they o...
+
+  [1] src: Bis zu 2000 Arbeitsplätze in der Anlage von Alcoa ...
+      pred: Up to 2,000 jobs at Alcoa's Portland plant are at ...
+
+  [2] src: Im Mai veröffentlichte die Agentur die Ergebnisse ...
+      pred: In May, the agency released the results of 581 tes...
+
+Loading COMET model...
+Computing metrics...
+
+============================================================
+Results
+============================================================
+  BLEU: 32.5
+  chrF: 55.32
+  TER: 54.33
+  COMET: 0.816
+
+Results saved to ../evaluations/wmt/qwen_de_en
+Done at: Sat Nov 29 04:29:12 CET 2025

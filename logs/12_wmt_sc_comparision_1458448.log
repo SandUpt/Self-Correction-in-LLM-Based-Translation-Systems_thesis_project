@@ -1,0 +1,55 @@
+Job ID: 1458448
+Job Name: 12_wmt_sc_comparision
+Node: gx25
+Start Time: Sun Nov 30 18:12:52 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 18:12:52 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:07:00.0 Off |                    0 |
+| N/A   39C    P0             57W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+12_wmt_sc_comparision
+WMT vs Self-correction comparison
+Model: qwen, Lang: zh_en
+
+Loading WMT results from ../evaluations/wmt/qwen_zh_en/results.csv
+Loading SC results from ../evaluations/self_correction/qwen_zh_en/results.csv
+WMT columns: ['source', 'reference', 'prediction', 'bleu', 'comet']
+SC columns: ['source', 'reference', 'initial_translation', 'analysis', 'corrected_translation', 'initial_bleu', 'final_bleu', 'bleu_change', 'initial_comet', 'final_comet', 'comet_change', 'raw_output']
+
+Per-example BLEU comparison (SC final vs WMT):
+  SC better: 2446/5000 (48.9%)
+  SC worse: 2131/5000 (42.6%)
+  Similar: 423/5000 (8.5%)
+  Avg BLEU diff: 1.16
+
+Per-example COMET comparison (SC final vs WMT):
+  SC better: 2958/5000 (59.2%)
+  SC worse: 1565/5000 (31.3%)
+  Similar: 477/5000 (9.5%)
+  Avg COMET diff: 0.0224
+
+Corpus level metrics:
+Metric        WMT    SC Init   SC Final     Diff
+BLEU        32.03      33.76      33.66    +1.63
+chrF        57.75       60.8      60.75    +3.00
+TER         56.68      57.14      57.36    +0.68
+COMET       0.842      0.864      0.864    +0.02
+
+Saved to ../evaluations/comparison_wmt_sc/qwen_zh_en
+Done at: Sun Nov 30 18:12:53 CET 2025

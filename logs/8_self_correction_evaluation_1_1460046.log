@@ -1,0 +1,82 @@
+Job ID: 1460046
+Job Name: 8_self_correction_evaluation_1
+Node: gx02
+Start Time: Tue Dec  2 08:22:42 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Tue Dec  2 08:22:42 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:88:00.0 Off |                    0 |
+| N/A   31C    P0             62W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+8_self_correction_evaluation_1
+Self-Correction Model Evaluation
+Model: llama3
+Language Pair: zh_en
+END token version: False
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/self_correction_merged/llama3_zh_en_70_30
+
+Generating self-correction outputs
+Generation took 7669.7s (0.7 examples/s)
+
+Extracting translations
+Repetitions detected: 4951/5000 (99.0%)
+Failed extractions: 1/5000
+Made corrections: 496/5000 (9.9%)
+
+Sample outputs:
+  [0] initial: The governor of the Reserve Bank of India, Raghura...
+      final:   The governor of the Reserve Bank of India, Raghura...
+
+  [1] initial: Of course, this does not make the Communist Party ...
+      final:   Of course, this does not make the Communist Party ...
+
+  [2] initial: People and their personalities, and their feelings...
+      final:   People and their personalities, and their feelings...
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+============================================================
+Initial Translation Metrics
+  BLEU: 33.6
+  chrF: 60.7
+  TER: 57.74
+  COMET: 0.863
+
+============================================================
+Final Translation Metrics
+  BLEU: 31.68
+  chrF: 59.93
+  TER: 63.36
+  COMET: 0.86
+
+============================================================
+Self-Correction Analysis
+  BLEU improved:  155/5000 (3.1%)
+  BLEU degraded:  283/5000 (5.7%)
+  BLEU unchanged: 4562/5000 (91.2%)
+  COMET improved: 148/5000 (3.0%)
+  COMET degraded: 328/5000 (6.6%)
+
+Results saved to ../evaluations/self_correction/llama3_zh_en_70_30
+Done at: Tue Dec  2 10:35:59 CET 2025

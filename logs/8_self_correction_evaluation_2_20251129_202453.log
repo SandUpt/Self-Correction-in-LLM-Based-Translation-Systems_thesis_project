@@ -1,0 +1,87 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/8_self_correction_evaluation_2_20251129_202453.log
+stderr log: ../logs/8_self_correction_evaluation_2_20251129_202453.err
+Start Time: Sat Nov 29 20:24:53 CET 2025
+Node: gx05
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 20:24:53 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:25:00.0 Off |                    0 |
+| N/A   34C    P0             42W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Self-Correction Model Evaluation
+Model: llama2
+Language Pair: de_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: ../models/self_correction_merged/llama2_de_en
+
+Generating self-correction outputs
+Generation took 1537.9s (0.3 examples/s)
+
+Extracting translations
+Repetitions detected: 27/500 (5.4%)
+Failed extractions: 1/500
+Made corrections: 428/500 (85.6%)
+
+Sample outputs:
+  [0] initial: Those who study high-achieving children say they o...
+      final:   Those who study gifted children say they often hav...
+
+  [1] initial: Up to 2000 jobs at Alcoa's Portland plant are on t...
+      final:   Up to 2,000 jobs at the Alcoa plant in Portland ar...
+
+  [2] initial: In May, the agency published the results of 581 te...
+      final:   In May, the agency published the results of 581 te...
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 36.08
+  chrF: 60.84
+  TER: 52.17
+  COMET: 0.854
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 33.45
+  chrF: 57.55
+  TER: 62.14
+  COMET: 0.805
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  152/500 (30.4%)
+  BLEU degraded:  250/500 (50.0%)
+  BLEU unchanged: 98/500 (19.6%)
+  COMET improved: 112/500 (22.4%)
+  COMET degraded: 304/500 (60.8%)
+
+Results saved to ../evaluations/self_correction/llama2_de_en
+Done at: Sat Nov 29 20:51:15 CET 2025

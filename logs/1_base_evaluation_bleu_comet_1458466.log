@@ -1,0 +1,61 @@
+Job ID: 1458466
+Job Name: 1_base_evaluation_bleu_comet
+Node: gx25
+Start Time: Sun Nov 30 18:24:40 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 18:24:40 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:4C:00.0 Off |                    0 |
+| N/A   35C    P0             57W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+1_base_evaluation_bleu_comet
+Base Model Evaluation
+Model: mistral
+Language Pair: zh_en
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: mistralai/Mistral-7B-Instruct-v0.1
+
+Generating translations
+Generation took 1415.6s (3.5 examples/s)
+
+Sample outputs:
+  [0] src: 印度储备银行行长拉古兰·拉詹（Raghuram Rajan）最近呼吁发达经济体央行通过国际合作顾及新...
+      pred: Raghuram Rajan, the CEO of the Reserve Bank of Ind...
+
+  [1] src: 当然，这并没有使共产党不那么讨厌自由的媒体和欣欣向荣的文明社会，正是它们可以提供重要的信息反馈以确保...
+      pred: Of course, this has not made the Communist Party h...
+
+  [2] src: 人和人格，以及他们彼此的感觉，能够让小规模的债务看起来如同无法维持，也能够让大规模债务在握手间烟消云...
+      pred: The feeling between people and their perception of...
+
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+Results:
+  BLEU: 17.02
+  chrF: 50.5
+  TER: 81.76
+  COMET: 0.819
+
+Results saved to ../evaluations/base/mistral_zh_en
+Done at: Sun Nov 30 18:51:02 CET 2025

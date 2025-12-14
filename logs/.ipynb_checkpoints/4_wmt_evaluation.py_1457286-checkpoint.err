@@ -1,0 +1,22 @@
++ echo 'Job ID: 1457286'
++ echo 'Job Name: 4_wmt_evaluation.py'
++ echo 'Node: gx02'
+++ date
++ echo 'Start Time: Sat Nov 29 13:13:37 CET 2025'
+++ pwd
++ echo 'Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files'
++ nvidia-smi
++ cd /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/
++ export TOKENIZERS_PARALLELISM=false
++ TOKENIZERS_PARALLELISM=false
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ echo 4_wmt_evaluation.py
++ python3 4_wmt_evaluation.py
+`torch_dtype` is deprecated! Use `dtype` instead!
+We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:07<00:21,  7.09s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:13<00:13,  6.64s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:21<00:07,  7.09s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:22<00:00,  4.91s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:22<00:00,  5.65s/it]
+Generating:   0%|          | 0/157 [00:00<?, ?it/s]The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Generating:   1%|          | 1/157 [00:02<06:52,  2.64s/it]Generating:   1%|▏         | 2/157 [00:04<06:09,  2.38s/it]Generating:   2%|▏         | 3/157 [00:07<06:47,  2.65s/it]Generating:   3%|▎         | 4/157 [00:09<06:12,  2.43s/it]Generating:   3%|▎         | 5/157 [00:12<06:08,  2.43s/it]Generating:   4%|▍         | 6/157 [00:14<05:57,  2.37s/it]Generating:   4%|▍         | 7/157 [00:18<06:53,  2.75s/it]Generating:   5%|▌         | 8/157 [00:21<07:13,  2.91s/it]Generating:   6%|▌         | 9/157 [00:24<07:03,  2.86s/it]Generating:   6%|▋         | 10/157 [00:26<06:33,  2.68s/it]Generating:   7%|▋         | 11/157 [00:28<06:08,  2.52s/it]

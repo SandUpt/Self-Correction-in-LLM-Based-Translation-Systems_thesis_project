@@ -1,0 +1,87 @@
+Job ID: 1457480
+Job Name: 8_self_correction_evaluation_1.py
+Node: gx28
+Start Time: Sat Nov 29 18:17:46 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 18:17:46 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:41:00.0 Off |                    0 |
+| N/A   39C    P0             60W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+8_self_correction_evaluation_1.py
+============================================================
+Self-Correction Model Evaluation
+Model: qwen
+Language Pair: de_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 100
+
+Loading model: ../models/self_correction_merged/qwen_de_en
+
+Generating self-correction outputs...
+Generation took 117.1s (0.9 examples/s)
+
+Extracting translations...
+Repetitions detected: 85/100 (85.0%)
+Failed extractions: 0/100
+Made corrections: 71/100 (71.0%)
+
+Sample outputs:
+  [0] initial: Those who study high-achieving children say that t...
+      final:   Those who study high-achieving children say that t...
+
+  [1] initial: Up to 2000 jobs in the Alcoa plant in Portland are...
+      final:   Up to 2000 jobs at the Alcoa plant in Portland are...
+
+  [2] initial: In May, the agency published the results of 581 te...
+      final:   In May, the agency published the results of 581 te...
+
+Loading COMET model...
+Computing corpus-level metrics...
+Computing per-example metrics...
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 37.08
+  chrF: 60.75
+  TER: 51.23
+  COMET: 0.863
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 32.7
+  chrF: 58.58
+  TER: 65.4
+  COMET: 0.852
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  32/100 (32.0%)
+  BLEU degraded:  33/100 (33.0%)
+  BLEU unchanged: 35/100 (35.0%)
+  COMET improved: 30/100 (30.0%)
+  COMET degraded: 39/100 (39.0%)
+
+Results saved to ../evaluations/self_correction/qwen_de_en
+Done at: Sat Nov 29 18:20:37 CET 2025

@@ -1,0 +1,22 @@
++ echo 'Job ID: 1458469'
++ echo 'Job Name: 1_base_evaluation_bleu_comet'
++ echo 'Node: gx02'
+++ date
++ echo 'Start Time: Sun Nov 30 18:26:08 CET 2025'
+++ pwd
++ echo 'Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files'
++ nvidia-smi
++ cd /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/
++ export TOKENIZERS_PARALLELISM=false
++ TOKENIZERS_PARALLELISM=false
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ echo 1_base_evaluation_bleu_comet
++ python3 1_base_evaluation_bleu_comet.py
+`torch_dtype` is deprecated! Use `dtype` instead!
+We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.17s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.18s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.18s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.22it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.05it/s]
+Generating:   0%|          | 0/157 [00:00<?, ?it/s]The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Generating:   1%|          | 1/157 [00:26<1:09:04, 26.57s/it]Generating:   1%|▏         | 2/157 [00:52<1:07:20, 26.06s/it]Generating:   2%|▏         | 3/157 [01:18<1:07:07, 26.15s/it]Generating:   3%|▎         | 4/157 [01:44<1:06:50, 26.22s/it]Generating:   3%|▎         | 5/157 [02:11<1:06:52, 26.40s/it]Generating:   4%|▍         | 6/157 [02:37<1:06:08, 26.28s/it]

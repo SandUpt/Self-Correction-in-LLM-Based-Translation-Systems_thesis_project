@@ -1,0 +1,41 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/3_wmt_merge.py_20251129_115545.log
+stderr log: ../logs/3_wmt_merge.py_20251129_115545.err
+Start Time: Sat Nov 29 11:55:45 CET 2025
+Node: gx04
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 11:55:45 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   31C    P0             38W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Merging LoRA Adapter
+Model: qwen
+Language Pair: de_en
+============================================================
+
+Loading base model: Qwen/Qwen2.5-7B-Instruct
+Loading tokenizer
+Loading adapter from: ../models/wmt_adapters/qwen_de_en
+Merging adapter weights
+Saving merged model to: ../models/wmt_merged/qwen_de_en
+
+Merge complete.
+Merged model saved to: ../models/wmt_merged/qwen_de_en
+Done at: Sat Nov 29 11:56:40 CET 2025

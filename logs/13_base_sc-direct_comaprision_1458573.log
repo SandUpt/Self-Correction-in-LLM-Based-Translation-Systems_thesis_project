@@ -1,0 +1,55 @@
+Job ID: 1458573
+Job Name: 13_base_sc-direct_comaprision
+Node: gx02
+Start Time: Sun Nov 30 20:38:24 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sun Nov 30 20:38:24 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:88:00.0 Off |                    0 |
+| N/A   31C    P0             62W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+13_base_sc-direct_comaprision
+Base vs Direct SC comparison
+Model: llama3, Lang: de_en
+
+Loading base results from ../evaluations/base/llama3_de_en/results.csv
+Loading SC results from ../evaluations/sc_direct/llama3_de_en/results.csv
+Base columns: ['source', 'reference', 'prediction', 'bleu', 'comet']
+SC columns: ['source', 'reference', 'initial_translation', 'analysis', 'corrected_translation', 'initial_bleu', 'final_bleu', 'bleu_change', 'initial_comet', 'final_comet', 'comet_change', 'raw_output']
+
+Per-example BLEU comparison (SC final vs Base):
+  SC better: 2085/5000 (41.7%)
+  SC worse: 2570/5000 (51.4%)
+  Similar: 345/5000 (6.9%)
+  Avg BLEU diff: -1.97
+
+Per-example COMET comparison (SC final vs Base):
+  SC better: 1932/5000 (38.6%)
+  SC worse: 2727/5000 (54.5%)
+  Similar: 341/5000 (6.8%)
+  Avg COMET diff: -0.0096
+
+Corpus level metrics:
+Metric       Base    SC Init   SC Final     Diff
+BLEU        34.78      33.98      32.72    -2.06
+chrF        61.22      59.84      58.19    -3.03
+TER         53.67      54.06      58.84    +5.17
+COMET       0.854      0.853      0.845    -0.01
+
+Saved to ../evaluations/comparison_direct/llama3_de_en
+Done at: Sun Nov 30 20:38:25 CET 2025

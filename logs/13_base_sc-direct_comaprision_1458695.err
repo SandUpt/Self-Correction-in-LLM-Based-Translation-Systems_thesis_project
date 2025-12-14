@@ -1,0 +1,19 @@
++ echo 'Job ID: 1458695'
++ echo 'Job Name: 13_base_sc-direct_comaprision'
++ echo 'Node: gx02'
+++ date
++ echo 'Start Time: Mon Dec  1 00:50:26 CET 2025'
+++ pwd
++ echo 'Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files'
++ nvidia-smi
++ cd /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/
++ export TOKENIZERS_PARALLELISM=false
++ TOKENIZERS_PARALLELISM=false
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ echo 13_base_sc-direct_comaprision
++ python3 13_base_sc-direct_comaprision.py
+++ date
++ echo 'Done at: Mon Dec  1 00:50:27 CET 2025'

@@ -1,0 +1,38 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/4_wmt_evaluation_20251129_124623.log
+stderr log: ../logs/4_wmt_evaluation_20251129_124623.err
+Start Time: Sat Nov 29 12:46:23 CET 2025
+Node: gx27
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 12:46:23 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:81:00.0 Off |                    0 |
+|  0%   58C    P0            122W /  300W |     877MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1277245      C   /usr/bin/python3                        868MiB |
++-----------------------------------------------------------------------------------------+
+============================================================
+WMT Model Evaluation
+Model: qwen
+Language Pair: zh_en
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/wmt_merged/qwen_zh_en
+
+Generating translations...

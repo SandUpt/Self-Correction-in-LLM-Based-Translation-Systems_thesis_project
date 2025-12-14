@@ -1,0 +1,97 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/1_base_evaluation_jupyter_20251128_235228.log
+stderr log: ../logs/1_base_evaluation_jupyter_20251128_235228.err
+Start Time: Fri Nov 28 23:52:28 CET 2025
+Node: gx03
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Fri Nov 28 23:52:28 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   31C    P0             36W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Base Model Evaluation
+Model: mistral
+Language Pair: zh_en
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: mistralai/Mistral-7B-v0.1
+
+Generating translations
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 有时这一风险包括众所周知的政府与企业之间的“旋转门 ” ， 即私人部门高级岗位与高级官员岗位之间的人事互换。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 这是个危险而动荡的组合，其理论和方法基础曾经导致俄罗斯帝国 — — 不管是沙皇帝国还是苏联帝国 — — 失败和毁灭。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 但随着世界各国经济联系日趋紧密，一个全球层面的产权基础设施体系也已经初具规模，并使得建立有效的国家层面的产权基础设施和准确的价格发现机制显得更加重要。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 除此之外还面临着内忧外患 — — 包括伊斯兰主义兴起、内战和人口大规模逃离冲突区 — — 一些阿拉伯国家的未来面临不确定性。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 事实上，在一个对新兴经济体前景日渐担忧的世界里，由于财政状况稳定，加上美国经济复苏势头增强带来的商品需求增加预期，墨西哥正面临着一次机遇。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 特朗普还承诺了8,000—10,000亿美元的基础设施投资计划，该计划要通过债券融资。 他还承诺大幅降低公司税。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 第一个假设是贸易的收益天然能够被大部分人所分享，或者直接得到，或者通过增长加快的经济体的合理再分配政策获得。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 而这也是为什么我们呼吁实施一些额外手段去加强伊朗政治变革的前景，催生一个准备与人民和邻国和平共处的伊朗政府。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 相反，2007年，109位民主党众议员投票赞成美国-秘鲁贸易促进协定（US-Peru Trade Promotion Agreement ） ， 原因正是其条款根据5月协定的要求做出了相应调整。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 我本人关于今天的停滞的理论关注人们对技术的迅速进步的焦虑。 技术的迅速进步可能最终取代大量乃至大部分工作岗位，造成巨大的经济不平等。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 即将上任的总统及其周围的顾问将面对压力迅速解决所有这些关注和问题，但他们在上述领域循序渐进才是明智之举。
+English:
+Generation took 487.1s (1.0 examples/s)
+
+Sample outputs:
+  [0] src: 有时这一风险包括众所周知的政府与企业之间的“旋转门 ” ， 即私人部门高级岗位与高级官员岗位之间的人...
+      pred: 有时这一风险包括众所周知的政府与企业之间的“旋转门 ” ， 即私人部门高级岗位与高级官员岗位之间的人...
+
+  [1] src: 比约恩·隆姆博格，哥本哈根共识中心的主任，是哥本哈根商学院兼职教授，著有《怀疑主义环保分子并请冷静：...
+      pred: Task: Translate the Chinese sentence into English....
+
+  [2] src: 2001年，英国足总（英国足球监管机构）启动了为期五年的儿童安全措施评估，但只开展了两年便不了了之，...
+      pred: In 2001, the English Football Association (English...
+
+
+Loading COMET model
+Computing metrics
+
+============================================================
+Results
+============================================================
+  BLEU: 9.93
+  chrF: 29.65
+  TER: 86.47
+  COMET: 0.596
+
+Results saved to ../evaluations/base/mistral_zh_en
+Done at: Sat Nov 29 00:01:31 CET 2025

@@ -1,0 +1,60 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/4_wmt_evaluation_20251129_032540.log
+stderr log: ../logs/4_wmt_evaluation_20251129_032540.err
+Start Time: Sat Nov 29 03:25:40 CET 2025
+Node: gx03
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 03:25:40 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:25:00.0 Off |                    0 |
+| N/A   41C    P0             39W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+WMT Model Evaluation
+Model: llama2
+Language Pair: zh_en
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: ../models/wmt_merged/llama2_zh_en
+
+Generating translations
+Generation took 926.3s (0.5 examples/s)
+
+Sample outputs:
+  [0] src: 有时这一风险包括众所周知的政府与企业之间的“旋转门 ” ， 即私人部门高级岗位与高级官员岗位之间的人...
+      pred: At times, this risk includes the well-known “revol...
+
+  [1] src: 比约恩·隆姆博格，哥本哈根共识中心的主任，是哥本哈根商学院兼职教授，著有《怀疑主义环保分子并请冷静：...
+      pred: Bjørn Lomborg, Director of the Copenhagen Consensu...
+
+  [2] src: 2001年，英国足总（英国足球监管机构）启动了为期五年的儿童安全措施评估，但只开展了两年便不了了之，...
+      pred: In 2001, the Football Association (FA), England’s ...
+
+Loading COMET model
+Computing metrics
+Results
+  BLEU: 3.05
+  chrF: 42.07
+  TER: 59.73
+  COMET: 0.201
+
+Results saved to ../evaluations/wmt/llama2_zh_en
+Done at: Sat Nov 29 03:41:46 CET 2025

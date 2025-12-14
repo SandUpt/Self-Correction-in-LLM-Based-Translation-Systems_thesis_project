@@ -1,0 +1,87 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/8_self_correction_evaluation_1.py_20251129_213413.log
+stderr log: ../logs/8_self_correction_evaluation_1.py_20251129_213413.err
+Start Time: Sat Nov 29 21:34:13 CET 2025
+Node: gx03
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 21:34:13 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:25:00.0 Off |                    0 |
+| N/A   32C    P0             37W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Self-Correction Model Evaluation
+Model: llama3
+Language Pair: zh_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/self_correction_merged/llama3_zh_en
+
+Generating self-correction outputs...
+Generation took 8397.9s (0.6 examples/s)
+
+Extracting translations...
+Repetitions detected: 4997/5000 (99.9%)
+Failed extractions: 0/5000
+Made corrections: 70/5000 (1.4%)
+
+Sample outputs:
+  [0] initial: The governor of the Reserve Bank of India, Raghura...
+      final:   The governor of the Reserve Bank of India, Raghura...
+
+  [1] initial: Of course, this does not make the Communist Party ...
+      final:   Of course, this does not make the Communist Party ...
+
+  [2] initial: People and personalities, and the way they feel ab...
+      final:   People and personalities, and the way they feel ab...
+
+Loading COMET model...
+Computing corpus-level metrics...
+Computing per-example metrics...
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 33.76
+  chrF: 60.45
+  TER: 57.4
+  COMET: 0.863
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 33.67
+  chrF: 60.39
+  TER: 57.63
+  COMET: 0.862
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  30/5000 (0.6%)
+  BLEU degraded:  37/5000 (0.7%)
+  BLEU unchanged: 4933/5000 (98.7%)
+  COMET improved: 31/5000 (0.6%)
+  COMET degraded: 36/5000 (0.7%)
+
+Results saved to ../evaluations/self_correction/llama3_zh_en
+Done at: Sat Nov 29 23:58:36 CET 2025

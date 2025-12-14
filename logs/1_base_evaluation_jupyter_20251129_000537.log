@@ -1,0 +1,127 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/1_base_evaluation_jupyter_20251129_000537.log
+stderr log: ../logs/1_base_evaluation_jupyter_20251129_000537.err
+Start Time: Sat Nov 29 00:05:37 CET 2025
+Node: gx04
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 00:05:37 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   32C    P0             38W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Base Model Evaluation
+Model: llama3
+Language Pair: zh_en
+============================================================
+
+Loading test data from ../../data/evaluation_sets/zh_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: meta-llama/Meta-Llama-3-8B
+
+Generating translations
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 有时这一风险包括众所周知的政府与企业之间的“旋转门 ” ， 即私人部门高级岗位与高级官员岗位之间的人事互换。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 如果对增加消费的新一轮强调能使中国储蓄相对GDP的比率下降5 % ， 那么中国依然会是全球储蓄率最高的国家，但这5%的下降将完全消灭中国的经常账户盈余。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 这是个危险而动荡的组合，其理论和方法基础曾经导致俄罗斯帝国 — — 不管是沙皇帝国还是苏联帝国 — — 失败和毁灭。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 尽管传统上贸易被认为是决定汇率的主要因素，汇率涨跌通常被认为可以纠正一国的对外贸易失衡，但当今资本跨境流动规模已经非常庞大，它们对汇率的冲击比以前大很多 。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 但随着世界各国经济联系日趋紧密，一个全球层面的产权基础设施体系也已经初具规模，并使得建立有效的国家层面的产权基础设施和准确的价格发现机制显得更加重要。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 我们已经在苹果的iPhone上看到了新范式的线索，iPhone可以进行手指动作识别，但是在智能技术界，概念可视化非常激进，以至于绝大多数的普通用户可能都不能意识到它是什么东西。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 除此之外还面临着内忧外患 — — 包括伊斯兰主义兴起、内战和人口大规模逃离冲突区 — — 一些阿拉伯国家的未来面临不确定性。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 如今，不论在欧洲，亚洲还是美国，民粹运动者的论调是，精英阶层过于强大，他们主宰者普通民众一切，广大民众的声音被那些自由派人士，多文化主义者和城市精英所淹没。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 事实上，在一个对新兴经济体前景日渐担忧的世界里，由于财政状况稳定，加上美国经济复苏势头增强带来的商品需求增加预期，墨西哥正面临着一次机遇。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 悲观者认为更多的人意味着更少的食物，上升的资源需求意味着枯竭和战争，而近几十年来，扩张的产能意味着更多的污染和全球变暖。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 特朗普还承诺了8,000—10,000亿美元的基础设施投资计划，该计划要通过债券融资。 他还承诺大幅降低公司税。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 不仅如此，梅休并没有发现表明衍生品市场在基础现金市场中造成波动的证据，而事实情况却恰恰相反，衍生品市场能够对基础现金市场的波动起到缓解作用。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 第一个假设是贸易的收益天然能够被大部分人所分享，或者直接得到，或者通过增长加快的经济体的合理再分配政策获得。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 经合组织2016年按任务对职业进行分解的研究表明，在21个经合组织国家中仅有9%的工作岗位确实处在危险之中。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 而这也是为什么我们呼吁实施一些额外手段去加强伊朗政治变革的前景，催生一个准备与人民和邻国和平共处的伊朗政府。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 但他们同时引入了目的完全相反的记忆法：通过将历史暴行的责任完全推给他人 — — 无论是希特勒的德国还是斯大林的苏联 — — 来粉饰国家叙事。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 相反，2007年，109位民主党众议员投票赞成美国-秘鲁贸易促进协定（US-Peru Trade Promotion Agreement ） ， 原因正是其条款根据5月协定的要求做出了相应调整。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 多数历史学家都认为恐怖的伊凡名副其实；他不仅杀害了他的儿子和其他亲属，还下令执行1565到1572年令俄国陷入恐怖氛围的由国家主导的清洗运动（oprichnina ） 。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 我本人关于今天的停滞的理论关注人们对技术的迅速进步的焦虑。 技术的迅速进步可能最终取代大量乃至大部分工作岗位，造成巨大的经济不平等。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 在10月5日的首轮投票后，两位女性之间的斗争看起来已是不可避免，因为民调显示两人都不太可能获得50%的选票。
+English:
+First prompt: Task: Translate the Chinese sentence into English.
+Chinese: 即将上任的总统及其周围的顾问将面对压力迅速解决所有这些关注和问题，但他们在上述领域循序渐进才是明智之举。
+English:
+Generation took 475.1s (1.1 examples/s)
+
+Sample outputs:
+  [0] src: 有时这一风险包括众所周知的政府与企业之间的“旋转门 ” ， 即私人部门高级岗位与高级官员岗位之间的人...
+      pred: At times, this risk includes the well-known “revol...
+
+  [1] src: 比约恩·隆姆博格，哥本哈根共识中心的主任，是哥本哈根商学院兼职教授，著有《怀疑主义环保分子并请冷静：...
+      pred: Bjorn Lomborg, the director of the Copenhagen Cons...
+
+  [2] src: 2001年，英国足总（英国足球监管机构）启动了为期五年的儿童安全措施评估，但只开展了两年便不了了之，...
+      pred: In 2001, the Football Association (the governing b...
+
+
+Loading COMET model
+Computing metrics
+
+============================================================
+Results
+============================================================
+  BLEU: 24.09
+  chrF: 56.85
+  TER: 70.89
+  COMET: 0.851
+
+Results saved to ../evaluations/base/llama3_zh_en
+Done at: Sat Nov 29 00:14:37 CET 2025

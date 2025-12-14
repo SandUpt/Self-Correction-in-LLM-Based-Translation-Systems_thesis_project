@@ -1,0 +1,87 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/8_self_correction_evaluation_2_20251129_201110.log
+stderr log: ../logs/8_self_correction_evaluation_2_20251129_201110.err
+Start Time: Sat Nov 29 20:11:10 CET 2025
+Node: gx03
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 20:11:10 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   31C    P0             36W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Self-Correction Model Evaluation
+Model: llama3
+Language Pair: de_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 500
+
+Loading model: ../models/self_correction_merged/llama3_de_en
+
+Generating self-correction outputs
+Generation took 1211.3s (0.4 examples/s)
+
+Extracting translations
+Repetitions detected: 0/500 (0.0%)
+Failed extractions: 0/500
+Made corrections: 435/500 (87.0%)
+
+Sample outputs:
+  [0] initial: Those who study high-achieving children say that t...
+      final:   Those who study gifted children say that these chi...
+
+  [1] initial: Up to 2000 jobs at the Alcoa plant in Portland are...
+      final:   Up to 2000 jobs could be lost at the Alcoa facilit...
+
+  [2] initial: In May, the Agency published the results of 581 te...
+      final:   In May, the agency published the results of 581 te...
+
+Loading COMET model
+Computing corpus-level metrics
+Computing per-example metrics
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 34.68
+  chrF: 59.62
+  TER: 53.27
+  COMET: 0.853
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 29.42
+  chrF: 56.49
+  TER: 70.91
+  COMET: 0.818
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  176/500 (35.2%)
+  BLEU degraded:  255/500 (51.0%)
+  BLEU unchanged: 69/500 (13.8%)
+  COMET improved: 160/500 (32.0%)
+  COMET degraded: 268/500 (53.6%)
+
+Results saved to ../evaluations/self_correction/llama3_de_en
+Done at: Sat Nov 29 20:32:13 CET 2025

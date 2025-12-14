@@ -1,0 +1,94 @@
+Using GPU inside JupyterLab session
+stdout log: ../logs/2_wmt_training_20251129_094613.log
+stderr log: ../logs/2_wmt_training_20251129_094613.err
+Start Time: Sat Nov 29 09:46:13 CET 2025
+Node: gx03
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 09:46:13 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:25:00.0 Off |                    0 |
+| N/A   32C    P0             37W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+WMT Fine-tuning
+Model: mistral
+Language Pair: zh_en
+============================================================
+
+Loading training data
+  Train: ../../data/processed/zh_en/train_news_un_balanced_30000.tsv
+  Val: ../../data/processed/zh_en/mix2k_dev.tsv
+  Train samples: 30000
+  Val samples: 2000
+
+Loading model: mistralai/Mistral-7B-Instruct-v0.1
+
+Setting up LoRA
+  Rank: 16, Alpha: 32
+  Target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+trainable params: 13,631,488 || all params: 7,255,363,584 || trainable%: 0.1879
+
+Preparing datasets
+
+Starting training
+  Epochs: 3
+  Effective batch size: 16
+  Learning rate: 0.0001
+{'loss': 1.2834, 'grad_norm': 1.9911917448043823, 'learning_rate': 1.7375886524822697e-05, 'epoch': 0.03}
+{'loss': 0.7565, 'grad_norm': 1.4987584352493286, 'learning_rate': 3.5106382978723407e-05, 'epoch': 0.05}
+{'loss': 0.7118, 'grad_norm': 1.8868048191070557, 'learning_rate': 5.283687943262412e-05, 'epoch': 0.08}
+{'loss': 0.6617, 'grad_norm': 2.179051637649536, 'learning_rate': 7.056737588652482e-05, 'epoch': 0.11}
+{'loss': 0.6427, 'grad_norm': 1.459793210029602, 'learning_rate': 8.829787234042553e-05, 'epoch': 0.13}
+{'loss': 0.6554, 'grad_norm': 1.758941650390625, 'learning_rate': 9.999750216565724e-05, 'epoch': 0.16}
+{'loss': 0.656, 'grad_norm': 1.3225160837173462, 'learning_rate': 9.996120615348041e-05, 'epoch': 0.19}
+{'loss': 0.6655, 'grad_norm': 1.9250514507293701, 'learning_rate': 9.988173129447252e-05, 'epoch': 0.21}
+{'loss': 0.6499, 'grad_norm': 1.4159923791885376, 'learning_rate': 9.975914627458066e-05, 'epoch': 0.24}
+{'loss': 0.6274, 'grad_norm': 1.206639051437378, 'learning_rate': 9.959355703760014e-05, 'epoch': 0.27}
+{'eval_loss': 0.6617069840431213, 'eval_runtime': 52.721, 'eval_samples_per_second': 37.936, 'eval_steps_per_second': 18.968, 'epoch': 0.27}
+{'loss': 0.6467, 'grad_norm': 1.5259854793548584, 'learning_rate': 9.93851066936128e-05, 'epoch': 0.29}
+{'loss': 0.6092, 'grad_norm': 0.976291298866272, 'learning_rate': 9.913397539530444e-05, 'epoch': 0.32}
+{'loss': 0.606, 'grad_norm': 1.5561895370483398, 'learning_rate': 9.884038018226838e-05, 'epoch': 0.35}
+{'loss': 0.5869, 'grad_norm': 1.4804860353469849, 'learning_rate': 9.850457479342942e-05, 'epoch': 0.37}
+{'loss': 0.6254, 'grad_norm': 1.5525739192962646, 'learning_rate': 9.812684944775082e-05, 'epoch': 0.4}
+{'loss': 0.6239, 'grad_norm': 1.2207472324371338, 'learning_rate': 9.770753059341306e-05, 'epoch': 0.43}
+{'loss': 0.5998, 'grad_norm': 1.6188913583755493, 'learning_rate': 9.724698062568196e-05, 'epoch': 0.45}
+{'loss': 0.5841, 'grad_norm': 1.2384870052337646, 'learning_rate': 9.674559757370947e-05, 'epoch': 0.48}
+{'loss': 0.6078, 'grad_norm': 1.2521531581878662, 'learning_rate': 9.620381475653791e-05, 'epoch': 0.51}
+{'loss': 0.6158, 'grad_norm': 1.0709477663040161, 'learning_rate': 9.562210040860518e-05, 'epoch': 0.53}
+{'eval_loss': 0.6303838491439819, 'eval_runtime': 52.6812, 'eval_samples_per_second': 37.964, 'eval_steps_per_second': 18.982, 'epoch': 0.53}
+{'loss': 0.5852, 'grad_norm': 1.5865285396575928, 'learning_rate': 9.50009572750742e-05, 'epoch': 0.56}
+{'loss': 0.6036, 'grad_norm': 1.4164927005767822, 'learning_rate': 9.434092217733677e-05, 'epoch': 0.59}
+{'loss': 0.5725, 'grad_norm': 1.2765311002731323, 'learning_rate': 9.364256554906699e-05, 'epoch': 0.61}
+{'loss': 0.578, 'grad_norm': 1.4065903425216675, 'learning_rate': 9.290649094322538e-05, 'epoch': 0.64}
+{'loss': 0.6003, 'grad_norm': 2.399907112121582, 'learning_rate': 9.213333451043981e-05, 'epoch': 0.67}
+{'loss': 0.5832, 'grad_norm': 1.326359510421753, 'learning_rate': 9.132376444921379e-05, 'epoch': 0.69}
+{'loss': 0.5585, 'grad_norm': 1.7751522064208984, 'learning_rate': 9.047848042843774e-05, 'epoch': 0.72}
+{'loss': 0.5776, 'grad_norm': 1.536434531211853, 'learning_rate': 8.959821298270183e-05, 'epoch': 0.75}
+{'loss': 0.5899, 'grad_norm': 1.698715329170227, 'learning_rate': 8.868372288093334e-05, 'epoch': 0.77}
+{'loss': 0.5775, 'grad_norm': 1.8961920738220215, 'learning_rate': 8.773580046890396e-05, 'epoch': 0.8}
+{'eval_loss': 0.6156096458435059, 'eval_runtime': 52.6745, 'eval_samples_per_second': 37.969, 'eval_steps_per_second': 18.985, 'epoch': 0.8}
+{'loss': 0.5671, 'grad_norm': 1.3312283754348755, 'learning_rate': 8.675526498617548e-05, 'epoch': 0.83}
+{'loss': 0.6068, 'grad_norm': 1.2645618915557861, 'learning_rate': 8.57429638580741e-05, 'epoch': 0.85}
+{'loss': 0.584, 'grad_norm': 1.566735029220581, 'learning_rate': 8.469977196330519e-05, 'epoch': 0.88}
+{'loss': 0.5984, 'grad_norm': 1.3228970766067505, 'learning_rate': 8.362659087784153e-05, 'epoch': 0.91}
+{'loss': 0.6077, 'grad_norm': 1.0809829235076904, 'learning_rate': 8.252434809573857e-05, 'epoch': 0.93}
+{'loss': 0.5608, 'grad_norm': 1.3055757284164429, 'learning_rate': 8.139399622755006e-05, 'epoch': 0.96}
+{'loss': 0.5677, 'grad_norm': 1.100024938583374, 'learning_rate': 8.023651217703671e-05, 'epoch': 0.99}
+{'loss': 0.5607, 'grad_norm': 1.0606104135513306, 'learning_rate': 7.905289629687964e-05, 'epoch': 1.01}
+{'loss': 0.46, 'grad_norm': 1.5854556560516357, 'learning_rate': 7.784417152412801e-05, 'epoch': 1.04}
+{'loss': 0.4635, 'grad_norm': 1.3131651878356934, 'learning_rate': 7.661138249612833e-05, 'epoch': 1.07}

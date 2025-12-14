@@ -1,0 +1,60 @@
+Job ID: 1460011
+Job Name: 6_self_correction_training
+Node: gx02
+Start Time: Tue Dec  2 07:58:30 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Tue Dec  2 07:58:30 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.133.20             Driver Version: 570.133.20     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:88:00.0 Off |                    0 |
+| N/A   31C    P0             62W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+6_self_correction_training.py
+Self-Correction Fine-tuning
+Model: llama3
+Language Pair: de_en
+Using END token: False
+
+Loading training data
+  Train: ../../data/processed/de_en/self_correction_de_en_70-30/train.tsv
+  Val: ../../data/processed/de_en/self_correction_de_en_70-30/val.tsv
+  Train samples: 920
+  Val samples: 184
+
+Loading WMT model: ../models/wmt_merged/llama3_de_en
+
+Setting up LoRA
+  Rank: 16, Alpha: 32
+  Target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+trainable params: 13,631,488 || all params: 8,043,892,736 || trainable%: 0.1695
+
+Preparing datasets
+
+Starting training
+  Epochs: 3
+  Effective batch size: 16
+  Learning rate: 0.0001
+{'loss': 1.2277, 'grad_norm': 0.9189639091491699, 'learning_rate': 8.618670190525352e-05, 'epoch': 0.87}
+{'loss': 0.8297, 'grad_norm': 1.051754355430603, 'learning_rate': 4.288425808633575e-05, 'epoch': 1.73}
+{'loss': 0.7631, 'grad_norm': 1.1116209030151367, 'learning_rate': 5.558227567253832e-06, 'epoch': 2.59}
+{'train_runtime': 325.8867, 'train_samples_per_second': 8.469, 'train_steps_per_second': 0.534, 'train_loss': 0.9118386630354256, 'epoch': 3.0}
+
+Saving adapter to ../models/self_correction/llama3_de_en_70_30
+
+Training complete.
+Adapter saved to: ../models/self_correction/llama3_de_en_70_30
+Done at: Tue Dec  2 08:04:15 CET 2025

@@ -1,0 +1,3 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|                                                                                                     | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|███████████████████████▎                                                                     | 1/4 [00:08<00:24,  8.08s/it]

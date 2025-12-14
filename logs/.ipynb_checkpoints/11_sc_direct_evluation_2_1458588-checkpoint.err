@@ -1,0 +1,22 @@
++ echo 'Job ID: 1458588'
++ echo 'Job Name: 11_sc_direct_evluation_2'
++ echo 'Node: gx02'
+++ date
++ echo 'Start Time: Sun Nov 30 21:04:15 CET 2025'
+++ pwd
++ echo 'Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files'
++ nvidia-smi
++ cd /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/scripts/
++ export TOKENIZERS_PARALLELISM=false
++ TOKENIZERS_PARALLELISM=false
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ echo 11_sc_direct_evluation_2
++ python3 11_sc_direct_evluation_2.py
+`torch_dtype` is deprecated! Use `dtype` instead!
+We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.24s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.25s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.20s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.17it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.01it/s]
+Generating:   0%|          | 0/157 [00:00<?, ?it/s]The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Generating:   1%|          | 1/157 [00:33<1:28:17, 33.96s/it]Generating:   1%|▏         | 2/157 [01:06<1:25:47, 33.21s/it]Generating:   2%|▏         | 3/157 [01:39<1:25:01, 33.12s/it]Generating:   3%|▎         | 4/157 [02:12<1:23:56, 32.92s/it]Generating:   3%|▎         | 5/157 [02:45<1:24:03, 33.18s/it]Generating:   4%|▍         | 6/157 [03:18<1:23:07, 33.03s/it]Generating:   4%|▍         | 7/157 [03:52<1:22:54, 33.16s/it]Generating:   5%|▌         | 8/157 [04:25<1:22:41, 33.30s/it]Generating:   6%|▌         | 9/157 [04:58<1:22:05, 33.28s/it]Generating:   6%|▋         | 10/157 [05:32<1:21:55, 33.44s/it]Generating:   7%|▋         | 11/157 [06:04<1:20:30, 33.08s/it]Generating:   8%|▊         | 12/157 [06:38<1:20:02, 33.12s/it]

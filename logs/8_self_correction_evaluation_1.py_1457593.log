@@ -1,0 +1,87 @@
+Job ID: 1457593
+Job Name: 8_self_correction_evaluation_1.py
+Node: gx28
+Start Time: Sat Nov 29 21:15:33 CET 2025
+Working Directory: /sc/home/sandeep.uprety/thesis_project/self_correction_llm_based_translation_thesis/thesis_project/sh_files
+Sat Nov 29 21:15:33 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   31C    P0             57W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+8_self_correction_evaluation_1.py
+============================================================
+Self-Correction Model Evaluation
+Model: llama2
+Language Pair: de_en
+END token version: False
+============================================================
+
+Loading test data from ../../data/evaluation_sets/de_en/test_5000_clean.tsv
+Test examples: 5000
+
+Loading model: ../models/self_correction_merged/llama2_de_en
+
+Generating self-correction outputs...
+Generation took 14934.8s (0.3 examples/s)
+
+Extracting translations...
+Repetitions detected: 258/5000 (5.2%)
+Failed extractions: 3/5000
+Made corrections: 3727/5000 (74.5%)
+
+Sample outputs:
+  [0] initial: Shortly after she broke up with him, it was reveal...
+      final:   Shortly after she had broken up with him, she was ...
+
+  [1] initial: I have heard the following scheme: the website is ...
+      final:   I have heard the following scheme: the website is ...
+
+  [2] initial: According to Kořán, if you put a static sign up wa...
+      final:   "If you put up a static sign warning of a danger, ...
+
+Loading COMET model...
+Computing corpus-level metrics...
+Computing per-example metrics...
+
+============================================================
+Initial Translation Metrics
+============================================================
+  BLEU: 34.33
+  chrF: 60.12
+  TER: 53.3
+  COMET: 0.853
+
+============================================================
+Final Translation Metrics
+============================================================
+  BLEU: 32.25
+  chrF: 58.83
+  TER: 61.59
+  COMET: 0.843
+
+============================================================
+Self-Correction Analysis
+============================================================
+  BLEU improved:  1665/5000 (33.3%)
+  BLEU degraded:  1799/5000 (36.0%)
+  BLEU unchanged: 1536/5000 (30.7%)
+  COMET improved: 1510/5000 (30.2%)
+  COMET degraded: 2041/5000 (40.8%)
+
+Results saved to ../evaluations/self_correction/llama2_de_en
+Done at: Sun Nov 30 01:28:15 CET 2025
