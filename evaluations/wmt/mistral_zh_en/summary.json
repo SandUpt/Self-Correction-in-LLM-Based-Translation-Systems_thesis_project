@@ -1,0 +1,21 @@
+{
+  "config": {
+    "model_type": "mistral",
+    "model_path": "../models/wmt_merged/mistral_zh_en",
+    "lang_pair": "zh_en",
+    "test_data": "../../data/evaluation_sets/zh_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 32,
+    "max_new_tokens": 256
+  },
+  "metrics": {
+    "BLEU": 30.54,
+    "chrF": 57.42,
+    "TER": 59.02,
+    "COMET": 0.853
+  },
+  "timing": {
+    "generation_seconds": 4559.2,
+    "examples_per_second": 1.1
+  }
+}

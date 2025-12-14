@@ -1,0 +1,47 @@
+{
+  "config": {
+    "model_type": "qwen",
+    "model_path": "../models/sc_direct_merged/qwen_zh_en",
+    "lang_pair": "zh_en",
+    "use_end_token": false,
+    "training_path": "Base to SC direct",
+    "test_data": "../../data/evaluation_sets/zh_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 32,
+    "max_new_tokens": 400
+  },
+  "initial_metrics": {
+    "BLEU": 32.91,
+    "chrF": 60.1,
+    "TER": 58.17,
+    "COMET": 0.863
+  },
+  "final_metrics": {
+    "BLEU": 32.82,
+    "chrF": 60.06,
+    "TER": 58.42,
+    "COMET": 0.863
+  },
+  "extraction_analysis": {
+    "repetition_count": 4576,
+    "repetition_rate": 91.5,
+    "failed_extractions": 0,
+    "correction_count": 88,
+    "correction_rate": 1.8
+  },
+  "improvement_analysis": {
+    "bleu_improved": 41,
+    "bleu_degraded": 29,
+    "bleu_unchanged": 4930,
+    "bleu_improved_rate": 0.8,
+    "bleu_degraded_rate": 0.6,
+    "comet_improved": 33,
+    "comet_degraded": 45,
+    "comet_improved_rate": 0.7,
+    "comet_degraded_rate": 0.9
+  },
+  "timing": {
+    "generation_seconds": 4970.0,
+    "examples_per_second": 1.0
+  }
+}

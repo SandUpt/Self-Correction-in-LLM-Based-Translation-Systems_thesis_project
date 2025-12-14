@@ -1,0 +1,28 @@
+{
+  "config": {
+    "model_type": "llama2",
+    "lang_pair": "de_en",
+    "training_path": "Base to SC direct",
+    "n_samples": 5000
+  },
+  "initial_metrics": {
+    "BLEU": 32.48,
+    "chrF": 58.73,
+    "TER": 55.35,
+    "COMET": 0.848
+  },
+  "final_metrics": {
+    "BLEU": 26.34,
+    "chrF": 51.17,
+    "TER": 76.79,
+    "COMET": 0.741
+  },
+  "analysis": {
+    "failed_extractions": 0,
+    "corrections_made": 3988,
+    "bleu_improved": 1043,
+    "bleu_degraded": 2813,
+    "comet_improved": 809,
+    "comet_degraded": 3101
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "config": {
+    "model_type": "llama3",
+    "model_path": "meta-llama/Meta-Llama-3-8B",
+    "lang_pair": "de_en",
+    "test_data": "../../data/evaluation_sets/de_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 32,
+    "max_new_tokens": 256
+  },
+  "metrics": {
+    "BLEU": 34.78,
+    "chrF": 61.22,
+    "TER": 53.67,
+    "COMET": 0.854
+  },
+  "timing": {
+    "generation_seconds": 4886.1,
+    "examples_per_second": 1.0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "config": {
+    "model_type": "qwen",
+    "model_path": "../models/self_correction_merged/qwen_de_en_70_30",
+    "lang_pair": "de_en",
+    "use_end_token": false,
+    "test_data": "../../data/evaluation_sets/de_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 32,
+    "max_new_tokens": 400
+  },
+  "initial_metrics": {
+    "BLEU": 34.19,
+    "chrF": 60.09,
+    "TER": 53.59,
+    "COMET": 0.853
+  },
+  "final_metrics": {
+    "BLEU": 24.2,
+    "chrF": 54.94,
+    "TER": 94.06,
+    "COMET": 0.833
+  },
+  "extraction_analysis": {
+    "repetition_count": 4116,
+    "repetition_rate": 82.3,
+    "failed_extractions": 18,
+    "correction_count": 3549,
+    "correction_rate": 71.0
+  },
+  "improvement_analysis": {
+    "bleu_improved": 1503,
+    "bleu_degraded": 1844,
+    "bleu_unchanged": 1653,
+    "bleu_improved_rate": 30.1,
+    "bleu_degraded_rate": 36.9,
+    "comet_improved": 1415,
+    "comet_degraded": 1990,
+    "comet_improved_rate": 28.3,
+    "comet_degraded_rate": 39.8
+  },
+  "timing": {
+    "generation_seconds": 5341.8,
+    "examples_per_second": 0.9
+  }
+}

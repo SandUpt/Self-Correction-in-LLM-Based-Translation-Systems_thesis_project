@@ -1,0 +1,28 @@
+{
+  "config": {
+    "model_type": "qwen",
+    "lang_pair": "de_en",
+    "training_path": "Base to SC direct",
+    "n_samples": 5000
+  },
+  "initial_metrics": {
+    "BLEU": 33.45,
+    "chrF": 59.52,
+    "TER": 54.48,
+    "COMET": 0.853
+  },
+  "final_metrics": {
+    "BLEU": 31.74,
+    "chrF": 56.27,
+    "TER": 59.95,
+    "COMET": 0.824
+  },
+  "analysis": {
+    "failed_extractions": 0,
+    "corrections_made": 4165,
+    "bleu_improved": 1715,
+    "bleu_degraded": 2174,
+    "comet_improved": 1535,
+    "comet_degraded": 2474
+  }
+}

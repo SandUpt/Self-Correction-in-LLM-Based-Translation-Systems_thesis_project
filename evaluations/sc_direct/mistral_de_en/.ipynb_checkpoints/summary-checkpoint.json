@@ -1,0 +1,47 @@
+{
+  "config": {
+    "model_type": "mistral",
+    "model_path": "../models/sc_direct_merged/mistral_de_en",
+    "lang_pair": "de_en",
+    "use_end_token": false,
+    "training_path": "Base to SC direct",
+    "test_data": "../../data/evaluation_sets/de_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 32,
+    "max_new_tokens": 400
+  },
+  "initial_metrics": {
+    "BLEU": 30.99,
+    "chrF": 57.44,
+    "TER": 57.16,
+    "COMET": 0.843
+  },
+  "final_metrics": {
+    "BLEU": 31.18,
+    "chrF": 56.84,
+    "TER": 57.45,
+    "COMET": 0.838
+  },
+  "extraction_analysis": {
+    "repetition_count": 2,
+    "repetition_rate": 0.0,
+    "failed_extractions": 0,
+    "correction_count": 4287,
+    "correction_rate": 85.7
+  },
+  "improvement_analysis": {
+    "bleu_improved": 1958,
+    "bleu_degraded": 2052,
+    "bleu_unchanged": 990,
+    "bleu_improved_rate": 39.2,
+    "bleu_degraded_rate": 41.0,
+    "comet_improved": 1864,
+    "comet_degraded": 2279,
+    "comet_improved_rate": 37.3,
+    "comet_degraded_rate": 45.6
+  },
+  "timing": {
+    "generation_seconds": 7858.7,
+    "examples_per_second": 0.6
+  }
+}

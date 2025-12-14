@@ -1,0 +1,23 @@
+{
+  "config": {
+    "model_type": "mistral",
+    "lang_pair": "de_en",
+    "use_end_token": false
+  },
+  "bleu_comparison": {
+    "sc_better": 2296,
+    "sc_worse": 2424,
+    "similar": 280,
+    "sc_better_pct": 45.9,
+    "sc_worse_pct": 48.5,
+    "avg_diff": -0.26
+  },
+  "comet_comparison": {
+    "sc_better": 2189,
+    "sc_worse": 2574,
+    "similar": 237,
+    "sc_better_pct": 43.8,
+    "sc_worse_pct": 51.5,
+    "avg_diff": -0.0029
+  }
+}

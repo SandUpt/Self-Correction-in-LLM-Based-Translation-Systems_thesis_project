@@ -1,0 +1,21 @@
+{
+  "config": {
+    "model_type": "llama3",
+    "model_path": "../models/wmt_merged/llama3_zh_en_4M_Lora",
+    "lang_pair": "zh_en",
+    "test_data": "../../data/evaluation_sets/zh_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 32,
+    "max_new_tokens": 256
+  },
+  "metrics": {
+    "BLEU": 32.33,
+    "chrF": 58.19,
+    "TER": 56.74,
+    "COMET": 0.845
+  },
+  "timing": {
+    "generation_seconds": 543.7,
+    "examples_per_second": 9.2
+  }
+}

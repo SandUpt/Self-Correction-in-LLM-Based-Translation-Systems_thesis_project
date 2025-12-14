@@ -1,0 +1,21 @@
+{
+  "config": {
+    "model_type": "llama2",
+    "model_path": "meta-llama/Llama-2-7b-hf",
+    "lang_pair": "zh_en",
+    "test_data": "../../data/evaluation_sets/zh_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 64,
+    "max_new_tokens": 256
+  },
+  "metrics": {
+    "BLEU": 19.74,
+    "chrF": 52.58,
+    "TER": 77.79,
+    "COMET": 0.829
+  },
+  "timing": {
+    "generation_seconds": 8587.9,
+    "examples_per_second": 0.6
+  }
+}

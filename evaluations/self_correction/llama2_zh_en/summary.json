@@ -1,0 +1,46 @@
+{
+  "config": {
+    "model_type": "llama2",
+    "model_path": "../models/self_correction_merged/llama2_zh_en",
+    "lang_pair": "zh_en",
+    "use_end_token": false,
+    "test_data": "../../data/evaluation_sets/zh_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 16,
+    "max_new_tokens": 400
+  },
+  "initial_metrics": {
+    "BLEU": 31.28,
+    "chrF": 58.38,
+    "TER": 59.48,
+    "COMET": 0.857
+  },
+  "final_metrics": {
+    "BLEU": 31.27,
+    "chrF": 58.38,
+    "TER": 59.49,
+    "COMET": 0.857
+  },
+  "extraction_analysis": {
+    "repetition_count": 1,
+    "repetition_rate": 0.0,
+    "failed_extractions": 0,
+    "correction_count": 36,
+    "correction_rate": 0.7
+  },
+  "improvement_analysis": {
+    "bleu_improved": 13,
+    "bleu_degraded": 14,
+    "bleu_unchanged": 4973,
+    "bleu_improved_rate": 0.3,
+    "bleu_degraded_rate": 0.3,
+    "comet_improved": 12,
+    "comet_degraded": 18,
+    "comet_improved_rate": 0.2,
+    "comet_degraded_rate": 0.4
+  },
+  "timing": {
+    "generation_seconds": 17153.0,
+    "examples_per_second": 0.3
+  }
+}

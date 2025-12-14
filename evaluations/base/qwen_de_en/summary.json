@@ -1,0 +1,21 @@
+{
+  "config": {
+    "model_type": "qwen",
+    "model_path": "Qwen/Qwen2.5-7B",
+    "lang_pair": "de_en",
+    "test_data": "../../data/evaluation_sets/de_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 16,
+    "max_new_tokens": 256
+  },
+  "metrics": {
+    "BLEU": 34.09,
+    "chrF": 60.14,
+    "TER": 54.61,
+    "COMET": 0.848
+  },
+  "timing": {
+    "generation_seconds": 1651.7,
+    "examples_per_second": 3.0
+  }
+}

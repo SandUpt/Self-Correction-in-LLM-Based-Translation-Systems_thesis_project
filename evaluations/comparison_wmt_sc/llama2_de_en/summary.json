@@ -1,0 +1,23 @@
+{
+  "config": {
+    "model_type": "llama2",
+    "lang_pair": "de_en",
+    "use_end_token": false
+  },
+  "bleu_comparison": {
+    "sc_better": 1631,
+    "sc_worse": 2817,
+    "similar": 552,
+    "sc_better_pct": 32.6,
+    "sc_worse_pct": 56.3,
+    "avg_diff": -3.76
+  },
+  "comet_comparison": {
+    "sc_better": 1448,
+    "sc_worse": 3060,
+    "similar": 492,
+    "sc_better_pct": 29.0,
+    "sc_worse_pct": 61.2,
+    "avg_diff": -0.0177
+  }
+}

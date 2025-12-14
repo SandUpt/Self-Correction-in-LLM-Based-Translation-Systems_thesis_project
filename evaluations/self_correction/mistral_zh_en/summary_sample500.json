@@ -1,0 +1,46 @@
+{
+  "config": {
+    "model_type": "mistral",
+    "model_path": "../models/self_correction_merged/mistral_zh_en",
+    "lang_pair": "zh_en",
+    "use_end_token": false,
+    "test_data": "../../data/evaluation_sets/zh_en/test_5000_clean.tsv",
+    "n_samples": 500,
+    "batch_size": 32,
+    "max_new_tokens": 400
+  },
+  "initial_metrics": {
+    "BLEU": 30.35,
+    "chrF": 57.65,
+    "TER": 60.78,
+    "COMET": 0.857
+  },
+  "final_metrics": {
+    "BLEU": 21.89,
+    "chrF": 45.18,
+    "TER": 79.82,
+    "COMET": 0.709
+  },
+  "extraction_analysis": {
+    "repetition_count": 1,
+    "repetition_rate": 0.2,
+    "failed_extractions": 0,
+    "correction_count": 459,
+    "correction_rate": 91.8
+  },
+  "improvement_analysis": {
+    "bleu_improved": 37,
+    "bleu_degraded": 420,
+    "bleu_unchanged": 43,
+    "bleu_improved_rate": 7.4,
+    "bleu_degraded_rate": 84.0,
+    "comet_improved": 3,
+    "comet_degraded": 454,
+    "comet_improved_rate": 0.6,
+    "comet_degraded_rate": 90.8
+  },
+  "timing": {
+    "generation_seconds": 895.6,
+    "examples_per_second": 0.6
+  }
+}

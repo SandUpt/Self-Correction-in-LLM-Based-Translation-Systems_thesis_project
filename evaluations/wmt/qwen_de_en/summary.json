@@ -1,0 +1,21 @@
+{
+  "config": {
+    "model_type": "qwen",
+    "model_path": "../models/wmt_merged/qwen_de_en",
+    "lang_pair": "de_en",
+    "test_data": "../../data/evaluation_sets/de_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 32,
+    "max_new_tokens": 256
+  },
+  "metrics": {
+    "BLEU": 32.86,
+    "chrF": 56.14,
+    "TER": 54.14,
+    "COMET": 0.826
+  },
+  "timing": {
+    "generation_seconds": 361.4,
+    "examples_per_second": 13.8
+  }
+}

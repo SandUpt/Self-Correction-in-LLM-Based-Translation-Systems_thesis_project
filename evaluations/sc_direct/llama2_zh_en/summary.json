@@ -1,0 +1,47 @@
+{
+  "config": {
+    "model_type": "llama2",
+    "model_path": "../models/sc_direct_merged/llama2_zh_en",
+    "lang_pair": "zh_en",
+    "use_end_token": false,
+    "training_path": "Base to SC direct",
+    "test_data": "../../data/evaluation_sets/zh_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 16,
+    "max_new_tokens": 400
+  },
+  "initial_metrics": {
+    "BLEU": 28.78,
+    "chrF": 56.48,
+    "TER": 63.15,
+    "COMET": 0.852
+  },
+  "final_metrics": {
+    "BLEU": 28.67,
+    "chrF": 56.45,
+    "TER": 63.48,
+    "COMET": 0.851
+  },
+  "extraction_analysis": {
+    "repetition_count": 74,
+    "repetition_rate": 1.5,
+    "failed_extractions": 1,
+    "correction_count": 37,
+    "correction_rate": 0.7
+  },
+  "improvement_analysis": {
+    "bleu_improved": 7,
+    "bleu_degraded": 28,
+    "bleu_unchanged": 4965,
+    "bleu_improved_rate": 0.1,
+    "bleu_degraded_rate": 0.6,
+    "comet_improved": 5,
+    "comet_degraded": 30,
+    "comet_improved_rate": 0.1,
+    "comet_degraded_rate": 0.6
+  },
+  "timing": {
+    "generation_seconds": 17199.8,
+    "examples_per_second": 0.3
+  }
+}

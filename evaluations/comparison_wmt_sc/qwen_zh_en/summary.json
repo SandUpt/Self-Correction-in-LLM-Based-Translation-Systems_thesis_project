@@ -1,0 +1,23 @@
+{
+  "config": {
+    "model_type": "qwen",
+    "lang_pair": "zh_en",
+    "use_end_token": false
+  },
+  "bleu_comparison": {
+    "sc_better": 2446,
+    "sc_worse": 2131,
+    "similar": 423,
+    "sc_better_pct": 48.9,
+    "sc_worse_pct": 42.6,
+    "avg_diff": 1.16
+  },
+  "comet_comparison": {
+    "sc_better": 2958,
+    "sc_worse": 1565,
+    "similar": 477,
+    "sc_better_pct": 59.2,
+    "sc_worse_pct": 31.3,
+    "avg_diff": 0.0224
+  }
+}

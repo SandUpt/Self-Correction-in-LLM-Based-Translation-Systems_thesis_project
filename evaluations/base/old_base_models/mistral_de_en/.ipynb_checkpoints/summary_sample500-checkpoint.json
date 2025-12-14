@@ -1,0 +1,21 @@
+{
+  "config": {
+    "model_type": "mistral",
+    "model_path": "mistralai/Mistral-7B-v0.1",
+    "lang_pair": "de_en",
+    "test_data": "../../data/evaluation_sets/de_en/test_5000_clean.tsv",
+    "n_samples": 500,
+    "batch_size": 24,
+    "max_new_tokens": 256
+  },
+  "metrics": {
+    "BLEU": 32.77,
+    "chrF": 55.97,
+    "TER": 58.75,
+    "COMET": 0.811
+  },
+  "timing": {
+    "generation_seconds": 493.1,
+    "examples_per_second": 1.0
+  }
+}

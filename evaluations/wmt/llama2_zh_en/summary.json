@@ -1,0 +1,21 @@
+{
+  "config": {
+    "model_type": "llama2",
+    "model_path": "../models/wmt_merged/llama2_zh_en",
+    "lang_pair": "zh_en",
+    "test_data": "../../data/evaluation_sets/zh_en/test_5000_clean.tsv",
+    "n_samples": 5000,
+    "batch_size": 48,
+    "max_new_tokens": 256
+  },
+  "metrics": {
+    "BLEU": 31.16,
+    "chrF": 57.97,
+    "TER": 58.41,
+    "COMET": 0.856
+  },
+  "timing": {
+    "generation_seconds": 8673.2,
+    "examples_per_second": 0.6
+  }
+}
